@@ -1,0 +1,37 @@
+// Fonts
+$font-size-base: 18px;
+$font-family-base: 'Work Sans', sans-serif;
+$font-family-title: 'Work Sans', sans-serif;
+$font-family-formatted: "Courier", Courier, monospace;
+$font-weight-base: 400;
+$title-size-h1: 58px;
+$title-size-h2: 58px;
+$title-size-h3: 38.37px;
+$title-size-h4: 24px;
+$title-size-h5: 24px;
+$title-size-h6: 18px;
+$line-height-h1: 68px;
+$line-height-h2: 68px;
+$line-height-h3: 45px;
+$line-height-h4: 170.3%;
+$line-height-h5: 140.3%;
+$line-height-h6: 21px;
+
+// Colors
+$color-lightwhite: #F9F9FF;
+$color-highlight: #3A42BC;
+$color-text: #1D215E;
+$color-white: #F1F1F1;
+
+// Layout
+$padding-basic: 82px;
+$padding-large: 130px;
+
+// Aesthetic
+$box-shadow-base:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);

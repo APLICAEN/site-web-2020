@@ -1,0 +1,81 @@
+
+@mixin background-image($file) {
+  background: url('./assets/media/images/#{$file}') center no-repeat;
+  background-size: cover;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-v-center {
+  @include flex;
+  align-items: center;
+}
+
+@mixin flex-h-center {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flex-vh-center {
+  @include flex-v-center;
+  justify-content: center;
+}
+
+@mixin horizontal-menu {
+  @include flex-v-center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin title-bold {
+  font-weight: 700;
+}
+
+@mixin title-semi-bold {
+  font-weight: 600;
+}
+
+@mixin title {
+  font-family: $font-family-title;
+  font-style: normal;
+}
+
+@mixin title-h1 {
+  font-size: $title-size-h1;
+  line-height: $line-height-h1;
+  @include title-bold;
+}
+
+@mixin title-h2 {
+  font-size: $title-size-h2;
+  line-height: $line-height-h2;
+  @include title-bold;
+}
+
+@mixin title-h3 {
+  font-size: $title-size-h3;
+  line-height: $line-height-h3;
+  @include title-semi-bold;
+}
+
+@mixin title-h4 {
+  font-size: $title-size-h4;
+  line-height: $line-height-h4;
+  color: $color-highlight;
+  @include title-semi-bold;
+}
+
+@mixin title-h5 {
+  font-size: $title-size-h5;
+  line-height: $line-height-h5;
+  @include title-semi-bold;
+}
+
+@mixin title-h6 {
+  font-size: $title-size-h6;
+  line-height: $line-height-h6;
+  @include title-semi-bold;
+}
