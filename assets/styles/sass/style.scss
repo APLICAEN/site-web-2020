@@ -9,7 +9,12 @@
 1.0 Normalize
 2.0 Accessibility
 3.0 Typography
-4.0 Buttons
+4.0 Controls
+5.0 Forms
+6.0 Formatting
+7.0 Lists
+8.0 Tables
+9.0 Links
 
 -----------------------------------------------------------*/
 
@@ -315,6 +320,7 @@ html, body {
 
 * {
   border-color: $color-secondary;
+  outline-color: $color-secondary;
 }
 
 button,
@@ -459,7 +465,216 @@ blockquote:after {
 }
 
 /*--------------------------------------------------------------
-4.0 Buttons
+4.0 Controls
 --------------------------------------------------------------*/
 
 @import "components/controls";
+
+
+/*--------------------------------------------------------------
+5.0 Forms
+--------------------------------------------------------------*/
+
+fieldset {
+	margin-bottom: 1em;
+}
+
+input,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background: $color-secondary;
+  border: none;
+	border-bottom: .07rem solid $color-secondary;
+	display: inline-block;
+	padding: $padding-btn;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: $color-highlight;
+	border-color: $color-highlight;
+  background-color: $color-lightwhite;
+  border: .07rem solid $color-highlight;
+}
+
+select {
+	height: 3rem;
+	max-width: 100%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  &:focus {
+  	outline: thin solid $color-highlight;
+  }
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+[type="reset"] {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  width: 234px;
+  height: 58px;
+  padding: 0;
+  background-color: $color-highlight;
+  color: $color-lightwhite;
+  @include title-semi-bold;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $box-shadow-dreamy;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  &:focus {
+  	background: $color-highlight;
+  	color: var(--color-background);
+  }
+}
+
+/* Placeholder text color -- selectors need to be separate to work. */
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder
+{
+	color: $color-highlight;
+}
+
+::-moz-placeholder {
+	opacity: 1;
+	/* Since FF19 lowers the opacity of the placeholder by default */
+}
+
+/*--------------------------------------------------------------
+6.0 Formatting
+--------------------------------------------------------------*/
+
+hr {
+	background-color: $color-secondary;
+	border: 0;
+	height: .07rem;
+	margin-bottom: 1.5em;
+}
+
+/*--------------------------------------------------------------
+7.0 Lists
+--------------------------------------------------------------*/
+
+ul,
+ol {
+	margin: 0 0 1.5em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 900;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/*--------------------------------------------------------------
+8.0 Tables
+--------------------------------------------------------------*/
+
+table {
+	border-collapse: collapse;
+	margin: 0 0 1.5rem;
+	width: 100%;
+}
+
+thead th {
+	border-bottom: .14rem solid $color-secondary;
+	padding-bottom: 0.5em;
+}
+
+th {
+	padding: 0.4rem;
+	text-align: left;
+}
+
+tr {
+	border-bottom: .07rem solid $color-secondary;
+}
+
+td {
+	padding: 0.4rem;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+9.0 Links
+--------------------------------------------------------------*/
+
+a {
+	color: $color-highlight;
+	text-decoration: none;
+
+  &:focus {
+  	outline: thin dotted;
+  }
+
+  &:hover {
+    border-bottom: 2px solid $color-highlight;
+  }
+
+  &:active {
+  	color: $color-highlight;
+  	outline: 0;
+  }
+}

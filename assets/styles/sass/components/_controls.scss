@@ -1,20 +1,3 @@
-button,
-[type="reset"],
-[type="submit"] {
-  width: 234px;
-  height: 58px;
-  padding: 0;
-  background-color: $color-highlight;
-  color: $color-lightwhite;
-  @include title-semi-bold;
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: $box-shadow-dreamy;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-}
-
 .btn-primary-cta {
   background-color: $color-highlight;
 }
@@ -51,7 +34,17 @@ button,
       top: 0;
       right: 0;
       padding: $padding-btn;
+      line-height: 50px;
       color: $color-highlight;
+  }
+}
+
+.os-scrollbar-vertical {
+  & > .os-scrollbar-track {
+    width: 10px;
+    & .os-scrollbar-handle {
+      background: $color-text !important;
+    }
   }
 }
 
