@@ -95,8 +95,9 @@
                 <p><label for="text_area">Text Area:</label><br>
                   <textarea id="text_area"></textarea>
                 </p>
-                <p><label for="select_element">Select Element:</label><br>
-                  <select name="select_element"> 
+                <label for="select_element">Select Element:</label><br>
+                  <div class="select-wrapper">
+                  <select name="select_element">
                     <optgroup label="Option Group 1">
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
@@ -108,24 +109,32 @@
                       <option value="3">Option 3</option>
                     </optgroup>
                   </select>
-                </p>
+                </div>
                 <p><label for="radio_buttons">Radio Buttons:</label></p>
                 <p>
-                  <input class="radio" name="radio_button" value="radio_1"
-                  type="radio"> Radio 1<br>
-                  <input class="radio" name="radio_button" value="radio_2"
-                  type="radio"> Radio 2<br>
-                  <input class="radio" name="radio_button" value="radio_3"
-                  type="radio"> Radio 3
+                  <input class="radio" name="radio1" value="radio_1"
+                  type="radio">
+                  <label for="radio1">Radio 1</label>
+                  <input class="radio" name="radio2" value="radio_2"
+                  type="radio">
+                  <label for="radio2">Radio 2</label>
+                  <input class="radio" name="radio3" value="radio_3"
+                  type="radio" disabled>
+                  <label for="radio3">Radio 3</label>
                 </p>
                 <p><label for="checkboxes">Checkboxes:</label></p>
                 <p>
-                  <input class="checkbox" name="checkboxes" value="check_1"
-                  type="checkbox"> Radio 1<br>
-                  <input class="checkbox" name="checkboxes" value="check_2"
-                  type="checkbox"> Radio 2<br>
-                  <input class="checkbox" name="checkboxes" value="check_3"
-                  type="checkbox"> Radio 3
+                  <input class="checkbox" name="checkboxes1" value="check_1"
+                  type="checkbox">
+                  <label for="checkboxes1">Checkbox 1</label>
+                  <input class="checkbox" name="checkboxes2" value="check_2"
+                  type="checkbox" disabled>
+                  <label for="checkboxes2">Checkbox 2</label>
+                  <input class="checkbox" name="checkboxes3" value="check_3"
+                  type="checkbox">
+                  <label for="checkboxes3">Checkbox 3</label>
+                  <input type="checkbox" class="switch" name="switch" checked>
+                  <label for="switch">Switch</label>
                 </p>
                 <p><label for="password">Password:</label></p>
                 <p>
@@ -137,6 +146,7 @@
                 <p>
                   <input class="button" value="Clear" type="reset">
                   <input class="button" value="Submit" type="submit">
+                  <button type="button" name="button">Random</button>
                 </p>
               </form>
             </fieldset>

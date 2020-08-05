@@ -9,6 +9,7 @@
 1.0 Normalize
 2.0 Accessibility
 3.0 Typography
+4.0 Buttons
 
 -----------------------------------------------------------*/
 
@@ -307,16 +308,29 @@ template {
 html, body {
   font-size: $font-size-base;
   font-family: $font-family-base;
+  font-weight: $font-weight-base;
   color: $color-text;
+  background-color: $color-lightwhite;
 }
 
-body,
+* {
+  border-color: $color-secondary;
+}
+
 button,
 input,
 select,
 textarea {
-	color: $color-lightwhite;
-	font-weight: $font-weight-base;
+  background-color: $color-secondary;
+	color: $color-text;
+  border: none;
+  padding: $padding-btn;
+  border-radius: $radius-hard;
+  margin: $margin-small auto;
+}
+
+textarea {
+  border-radius: $radius-soft;
 }
 
 h1,
@@ -377,10 +391,8 @@ i {
 }
 
 blockquote {
-	color: var(--color-accent);
-  font-size: 1.28rem;
-  font-weight: 900;
-  line-height: 2rem;
+	color: $color-highlight;
+  @include title-bold;
 }
 
 blockquote cite {
@@ -393,7 +405,7 @@ address {
 }
 
 pre {
-	background: #eee;
+	background: $color-secondary;
 	font-family: $font-family-formatted;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -405,13 +417,12 @@ kbd,
 tt,
 var {
   font-family: $font-family-formatted;
-	font-size: 1rem;
 	font-size: 0.9375rem;
 }
 
 abbr,
 acronym {
-	border-bottom: .07rem solid var(--color-main);
+	border-bottom: .07rem solid $color-secondary;
 	cursor: help;
 }
 
@@ -446,3 +457,9 @@ blockquote:after {
   background: $color-highlight;
   color: $color-lightwhite;
 }
+
+/*--------------------------------------------------------------
+4.0 Buttons
+--------------------------------------------------------------*/
+
+@import "components/controls";
