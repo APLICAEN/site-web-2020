@@ -1,0 +1,12 @@
+.card-expertise {
+  min-height: 360px;
+  background-color: $color-highlight;
+  border-radius: 16px;
+  padding: $padding-btn;
+  flex: 1 1 33%;
+  box-sizing: content-box;
+
+   * {
+     color: $color-lightwhite;
+   }
+}

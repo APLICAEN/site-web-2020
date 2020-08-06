@@ -17,6 +17,7 @@
 9.0 Links
 10.0 Layout
    10.1 Header
+   10.2 Regular Content
 11.0 Navigation
 
 -----------------------------------------------------------*/
@@ -722,8 +723,10 @@ body {
 
 .site-header {
   padding: $padding-header;
-  display: flex;
-  justify-content: space-between;
+  @include flex-v-center;
+  position: fixed;
+  width: 100%;
+  background: $color-lightwhite;
 
   a {
     color: $color-text;
@@ -746,6 +749,78 @@ body {
 }
 
 /*--------------------------------------------------------------
+10.2 Regular Content
+--------------------------------------------------------------*/
+
+.site-content {
+  & > :nth-child(2n) {
+    background-color: $color-alternate;
+  }
+
+  & > * {
+    padding: 0 $padding-large;
+  }
+}
+
+.site-metadata {
+  & > * {
+    @include flex-v-center;
+    justify-content: space-between;
+  }
+
+  .metadata-info {
+    & > * {
+      flex: 1 1 50%;
+    }
+
+    .metadata-general {
+      margin-right: 39px;
+      margin-bottom: 44px;
+    }
+  }
+
+  .metadata-cta {
+    .cta-expertises {
+      list-style: none;
+      padding: 0;
+      @include flex-v-center;
+      flex-wrap: nowrap;
+
+      & li {
+        display: inline-block;
+        @include title-h6;
+        width: 196px;
+        margin-right: 13px;
+      }
+    }
+
+    .cta-primary {
+      margin-right: 0;
+    }
+  }
+}
+
+.site-section {
+  padding-top: 61px;
+  padding-bottom: 61px;
+
+  .section-title {
+    text-align: center;
+  }
+
+  .expertises {
+    @include flex-v-center;
+
+    .card-expertise:nth-child(2) {
+      margin: 0 24px;
+    }
+  }
+}
+
+@import "components/cards";
+
+
+/*--------------------------------------------------------------
 11.0 Navigation
 --------------------------------------------------------------*/
 
@@ -754,7 +829,6 @@ body {
   align-items: center;
   line-height: 1.78rem;
 	width: 100%;
-	justify-content: center;
 
   ul {
     list-style: none;
