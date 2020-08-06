@@ -18,6 +18,8 @@
 10.0 Layout
    10.1 Header
    10.2 Regular Content
+   10.3 Front Page
+   10.4 Footer
 11.0 Navigation
 
 -----------------------------------------------------------*/
@@ -704,6 +706,7 @@ html {
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
 	box-sizing: inherit;
+  transition: all .3s ease-in-out;
 }
 
 body {
@@ -762,6 +765,10 @@ body {
   }
 }
 
+/*--------------------------------------------------------------
+10.3 Front Page
+--------------------------------------------------------------*/
+
 .site-metadata {
   & > * {
     @include flex-v-center;
@@ -802,19 +809,43 @@ body {
 
 .site-section {
   padding-top: 61px;
-  padding-bottom: 61px;
+  padding-bottom: 87px;
 
   .section-title {
     text-align: center;
   }
 
-  .expertises {
-    @include flex-v-center;
+  .expertises-wrapper {
+    @include flex;
+    align-items: start;
 
     .card-expertise:nth-child(2) {
       margin: 0 24px;
     }
   }
+
+  .prestations-wrapper, .processus-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+  }
+
+  &.hero-section {
+      background-color: $color-highlight;
+
+      * {
+        color: $color-lightwhite;
+      }
+  }
+}
+
+.processus-wrapper {
+  column-gap: 24px;
+  row-gap: 106px;
+}
+
+.section-footer {
+  @include flex-vh-center;
 }
 
 @import "components/cards";

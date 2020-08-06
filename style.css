@@ -15,6 +15,8 @@
 10.0 Layout
    10.1 Header
    10.2 Regular Content
+   10.3 Front Page
+   10.4 Footer
 11.0 Navigation
 
 -----------------------------------------------------------*/
@@ -750,7 +752,8 @@ html {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  transition: all .3s ease-in-out; }
 
 body {
   overflow-x: hidden; }
@@ -794,6 +797,9 @@ body {
 .site-content > * {
   padding: 0 11.28%; }
 
+/*--------------------------------------------------------------
+10.3 Front Page
+--------------------------------------------------------------*/
 .site-metadata > * {
   display: flex;
   align-items: center;
@@ -825,24 +831,77 @@ body {
 
 .site-section {
   padding-top: 61px;
-  padding-bottom: 61px; }
+  padding-bottom: 87px; }
   .site-section .section-title {
     text-align: center; }
-  .site-section .expertises {
+  .site-section .expertises-wrapper {
     display: flex;
-    align-items: center; }
-    .site-section .expertises .card-expertise:nth-child(2) {
+    align-items: start; }
+    .site-section .expertises-wrapper .card-expertise:nth-child(2) {
       margin: 0 24px; }
+  .site-section .prestations-wrapper, .site-section .processus-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; }
+  .site-section.hero-section {
+    background-color: #3A42BC; }
+    .site-section.hero-section * {
+      color: #F9F9FF; }
+
+.processus-wrapper {
+  column-gap: 24px;
+  row-gap: 106px; }
+
+.section-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.card .card-link :hover {
+  border: none;
+  text-decoration: none; }
 
 .card-expertise {
   min-height: 360px;
   background-color: #3A42BC;
   border-radius: 16px;
-  padding: 10px 20px;
+  padding: 10px 20px 20px;
   flex: 1 1 33%;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  display: grid; }
   .card-expertise * {
     color: #F9F9FF; }
+  .card-expertise .expertise-cta {
+    text-align: right;
+    align-self: end; }
+  .card-expertise:hover {
+    box-shadow: 0 2.8px 2.2px rgba(29, 33, 94, 0.034), 0 6.7px 5.3px rgba(29, 33, 255, 0.048), 0 12.5px 10px rgba(29, 33, 94, 0.06), 0 22.3px 17.9px rgba(29, 33, 94, 0.072), 0 41.8px 33.4px rgba(29, 33, 94, 0.086), 0 100px 80px rgba(29, 33, 94, 0.12); }
+
+.card-prestation .prestation-name {
+  font-weight: 400;
+  font-size: 20px;
+  border: 1px solid #C8C8EB;
+  border-radius: 20px;
+  padding: 28px 49px;
+  color: #1D215E; }
+  .card-prestation .prestation-name:hover {
+    background-color: #3A42BC;
+    color: #F9F9FF; }
+
+.card-processus {
+  font-size: 16px;
+  border-radius: 16px;
+  min-height: 365px;
+  padding: 10px 20px 20px;
+  border: 1px solid #C8C8EB;
+  border-top: none;
+  border-right: 1px solid rgba(200, 200, 235, 0.5);
+  border-left: 1px solid rgba(200, 200, 235, 0.5); }
+  .card-processus .card-header {
+    text-align: center; }
+    .card-processus .card-header .card-icon {
+      width: 96px;
+      height: 96px; }
 
 /*--------------------------------------------------------------
 11.0 Navigation
