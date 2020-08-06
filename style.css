@@ -122,7 +122,8 @@ audio:not([controls]) {
   height: 0; }
 
 img {
-  border-style: none; }
+  border-style: none;
+  max-width: 100%; }
 
 svg:not(:root) {
   overflow: hidden; }
@@ -852,10 +853,14 @@ body {
   column-gap: 24px;
   row-gap: 106px; }
 
+.credentials-wrapper {
+  text-align: center; }
+
 .section-footer {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 44px; }
 
 .card .card-link :hover {
   border: none;

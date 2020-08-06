@@ -150,6 +150,7 @@ audio:not([controls]) {
 
 img {
 	border-style: none;
+  max-width: 100%;
 }
 
 svg:not(:root) {
@@ -844,8 +845,13 @@ body {
   row-gap: 106px;
 }
 
+.credentials-wrapper {
+  text-align: center;
+}
+
 .section-footer {
   @include flex-vh-center;
+  margin-top: 44px;
 }
 
 @import "components/cards";
