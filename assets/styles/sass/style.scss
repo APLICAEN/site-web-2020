@@ -15,6 +15,9 @@
 7.0 Lists
 8.0 Tables
 9.0 Links
+10.0 Layout
+   10.1 Header
+11.0 Navigation
 
 -----------------------------------------------------------*/
 
@@ -670,11 +673,102 @@ a {
   }
 
   &:hover {
+    color: $color-text;
+  }
+
+  main &:hover {
     border-bottom: 2px solid $color-highlight;
   }
 
-  &:active {
+  &:active, &.active {
   	color: $color-highlight;
   	outline: 0;
   }
+}
+
+/*--------------------------------------------------------------
+10.0 Layout
+--------------------------------------------------------------*/
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site-header,
+.site-content,
+.site-footer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+10.1 Header
+--------------------------------------------------------------*/
+
+.site-header {
+  padding: $padding-header;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: $color-text;
+
+    &:hover {
+      color: $color-highlight;
+    }
+  }
+
+  img {
+    width: 42.81px;
+  	height: auto;
+    margin-right: 39px;
+  }
+
+  .site-branding {
+  	@include title-h1;
+    text-transform: uppercase;
+  }
+}
+
+/*--------------------------------------------------------------
+11.0 Navigation
+--------------------------------------------------------------*/
+
+.navigation {
+  display: flex;
+  align-items: center;
+  line-height: 1.78rem;
+	width: 100%;
+	justify-content: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 2.86rem;
+    position: relative;
+  }
+}
+
+.mobile-navigation {
+  display: none;
 }

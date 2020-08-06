@@ -12,6 +12,9 @@
 7.0 Lists
 8.0 Tables
 9.0 Links
+10.0 Layout
+   10.1 Header
+11.0 Navigation
 
 -----------------------------------------------------------*/
 /*-----------------------------------------------------------
@@ -435,19 +438,6 @@ blockquote:after {
     line-height: 50px;
     color: #3A42BC; }
 
-.scrollbar {
-  background-color: #C8C8EB; }
-  .scrollbar, .scrollbar .scrollbar-thumb {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: .5rem;
-    height: 100vh; }
-  .scrollbar .scrollbar-thumb {
-    width: .5rem;
-    height: 2rem;
-    background-color: #3A42BC; }
-
 .os-scrollbar-vertical > .os-scrollbar-track {
   width: 10px; }
   .os-scrollbar-vertical > .os-scrollbar-track .os-scrollbar-handle {
@@ -738,7 +728,76 @@ a {
   a:focus {
     outline: thin dotted; }
   a:hover {
+    color: #1D215E; }
+  main a:hover {
     border-bottom: 2px solid #3A42BC; }
-  a:active {
+  a:active, a.active {
     color: #3A42BC;
     outline: 0; }
+
+/*--------------------------------------------------------------
+10.0 Layout
+--------------------------------------------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body {
+  overflow-x: hidden; }
+
+.site-header,
+.site-content,
+.site-footer {
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+10.1 Header
+--------------------------------------------------------------*/
+.site-header {
+  padding: 24px 7.22rem;
+  display: flex;
+  justify-content: space-between; }
+  .site-header a {
+    color: #1D215E; }
+    .site-header a:hover {
+      color: #3A42BC; }
+  .site-header img {
+    width: 42.81px;
+    height: auto;
+    margin-right: 39px; }
+  .site-header .site-branding {
+    font-size: 58px;
+    line-height: 68px;
+    font-weight: 700;
+    text-transform: uppercase; }
+
+/*--------------------------------------------------------------
+11.0 Navigation
+--------------------------------------------------------------*/
+.navigation {
+  display: flex;
+  align-items: center;
+  line-height: 1.78rem;
+  width: 100%;
+  justify-content: center; }
+  .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .navigation li {
+    display: inline-block;
+    margin-right: 2.86rem;
+    position: relative; }
+
+.mobile-navigation {
+  display: none; }
