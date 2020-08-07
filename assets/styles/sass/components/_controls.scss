@@ -4,8 +4,13 @@
 
 .btn-secondary-cta {
   background-color: transparent;
-  border: 1.16px solid $color-highlight;
+  border: 2px solid $color-highlight;
   color: $color-highlight;
+
+  &:hover {
+    background-color: $color-highlight;
+    color: $color-lightwhite;
+  }
 }
 
 .btn-tertiary-cta {

@@ -2,7 +2,7 @@
   .card-link {
     color: $color-text;
     text-decoration: none;
-    
+
     :hover {
       border: none;
       text-decoration: none;
@@ -70,5 +70,13 @@
       width: 96px;
       height: 96px;
     }
+  }
+}
+
+.card-article {
+  .article-publish-date {
+    text-align: right;
+    font-weight: 400;
+    margin: $margin-small 0;
   }
 }
