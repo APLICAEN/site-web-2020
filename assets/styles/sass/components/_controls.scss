@@ -8,6 +8,7 @@
   color: $color-highlight;
 
   &:hover {
+    box-shadow: none;
     background-color: $color-highlight;
     color: $color-lightwhite;
   }

@@ -21,17 +21,17 @@
   border-left: 1px solid rgba(200, 200, 235, .5);
 }
 
-.card-expertise, .card-article {
-  &:hover {
-    box-shadow: $box-shadow-card;
-  }
-}
-
 .card-expertise {
   min-height: 360px;
   background-color: $color-highlight;
   flex: 1 1 33%;
   display: grid;
+
+  &:hover {
+    box-shadow: $box-shadow-card;
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+  }
 
    * {
      color: $color-lightwhite;
@@ -74,9 +74,31 @@
 }
 
 .card-article {
+  .article-thumbnail-wrapper {
+    height: 180px;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    overflow: hidden;
+
+    .article-thumbnail {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .article-publish-date {
     text-align: right;
     font-weight: 400;
     margin: $margin-small 0;
+  }
+
+  &:hover {
+    border-color: $color-highlight;
+
+    .article-thumbnail {
+      transform: scale(1.2);
+      transition: all .5s ease-in-out;
+    }
   }
 }

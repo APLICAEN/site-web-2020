@@ -20,7 +20,9 @@
    10.2 Regular Content
    10.3 Front Page
    10.4 Footer
+	 10.5 Posts
 11.0 Navigation
+13.0 Widgets
 
 -----------------------------------------------------------*/
 
@@ -684,7 +686,7 @@ a {
     border-bottom: 2px solid $color-highlight;
   }
 
-  &:active, &.active {
+  &:active, .navigation &.active {
   	color: $color-highlight;
   	outline: 0;
   }
@@ -726,6 +728,7 @@ body {
 --------------------------------------------------------------*/
 
 .site-header {
+  z-index: 10;
   padding: $padding-header;
   @include flex-v-center;
   position: fixed;
@@ -743,7 +746,7 @@ body {
   img {
     width: 42.81px;
   	height: auto;
-    margin-right: 39px;
+    margin-right: 63px;
   }
 
   .site-branding {
@@ -873,8 +876,19 @@ body {
 --------------------------------------------------------------*/
 
 .site-footer {
-  & > :nth-child(2n) {
-    background-color: $color-alternate;
+  background-color: $color-alternate;
+  padding-bottom: 62px;
+
+  & > :first-child {
+    background-color: $color-lightwhite;
+  }
+
+  & > :last-child {
+    padding-bottom: 44px;
+  }
+
+  & > :not(:first-child) {
+    padding: 0 $padding-large;
   }
 }
 
@@ -896,23 +910,26 @@ body {
 }
 
 .site-credits {
-  background-color: $color-alternate;
-  padding: 0 $padding-large;
-  padding-bottom: 44px;
 
-  .site-branding img {
-    width: 42.81px;
-    height: auto;
-    margin-right: 39px;
-  }
+  .site-branding {
+		grid-column: 1;
+
+		img {
+	    width: 42.81px;
+	    height: auto;
+	    margin-right: 39px;
+  	}
+	}
 
   .site-copyright {
     font-size: 12px;
     text-align: center;
+		grid-column: 2;
   }
 
   .site-labels {
     text-align: end;
+		grid-column: 3;
 
     img {
       height: 100%;
@@ -920,6 +937,12 @@ body {
     }
   }
 }
+
+/*--------------------------------------------------------------
+10.5 Posts
+--------------------------------------------------------------*/
+
+
 
 /*--------------------------------------------------------------
 11.0 Navigation
@@ -949,6 +972,8 @@ body {
 }
 
 .social-links {
+  margin-bottom: 62px;
+
   & > * {
     margin-right: 18px;
   }
@@ -956,5 +981,15 @@ body {
   img {
     width: 36px;
     height: 36px;
+  }
+}
+
+/*--------------------------------------------------------------
+13.0 Widgets
+--------------------------------------------------------------*/
+
+.widget-section {
+  .widget-content :not(button) {
+    font-size: 12px;
   }
 }
