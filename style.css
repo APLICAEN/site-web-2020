@@ -795,7 +795,7 @@ body {
 .site-content > :nth-child(2n) {
   background-color: #E6E6F9; }
 
-.site-content > * {
+.site-section > * {
   padding: 0 11.28%; }
 
 /*--------------------------------------------------------------
@@ -840,21 +840,30 @@ body {
     align-items: start; }
     .site-section .expertises-wrapper .card-expertise:nth-child(2) {
       margin: 0 24px; }
-  .site-section .prestations-wrapper, .site-section .processus-wrapper {
+  .site-section .prestations-wrapper, .site-section .processus-wrapper,
+  .site-section .testimonials-wrapper, .site-section .blog-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center; }
+    justify-items: center;
+    column-gap: 24px; }
   .site-section.hero-section {
     background-color: #3A42BC; }
     .site-section.hero-section * {
       color: #F9F9FF; }
 
 .processus-wrapper {
-  column-gap: 24px;
   row-gap: 106px; }
 
 .credentials-wrapper {
   text-align: center; }
+
+.section-content.full-width {
+  padding: 0; }
+
+.image-overlay-wrapper {
+  background-color: #3A42BC;
+  background-blend-mode: overlay;
+  height: 470px; }
 
 .section-footer {
   display: flex;
@@ -862,25 +871,36 @@ body {
   justify-content: center;
   margin-top: 44px; }
 
-.card .card-link :hover {
-  border: none;
+.card .card-link {
+  color: #1D215E;
   text-decoration: none; }
+  .card .card-link :hover {
+    border: none;
+    text-decoration: none; }
+
+.card-expertise, .card-article,
+.card-processus, .card-testimonial {
+  border-radius: 16px;
+  padding: 10px 20px 20px;
+  box-sizing: content-box;
+  border: 1px solid #C8C8EB;
+  border-top: none;
+  border-right: 1px solid rgba(200, 200, 235, 0.5);
+  border-left: 1px solid rgba(200, 200, 235, 0.5); }
+
+.card-expertise:hover, .card-article:hover {
+  box-shadow: 0 2.8px 2.2px rgba(29, 33, 94, 0.034), 0 6.7px 5.3px rgba(29, 33, 255, 0.048), 0 12.5px 10px rgba(29, 33, 94, 0.06), 0 22.3px 17.9px rgba(29, 33, 94, 0.072), 0 41.8px 33.4px rgba(29, 33, 94, 0.086), 0 100px 80px rgba(29, 33, 94, 0.12); }
 
 .card-expertise {
   min-height: 360px;
   background-color: #3A42BC;
-  border-radius: 16px;
-  padding: 10px 20px 20px;
   flex: 1 1 33%;
-  box-sizing: content-box;
   display: grid; }
   .card-expertise * {
     color: #F9F9FF; }
   .card-expertise .expertise-cta {
     text-align: right;
     align-self: end; }
-  .card-expertise:hover {
-    box-shadow: 0 2.8px 2.2px rgba(29, 33, 94, 0.034), 0 6.7px 5.3px rgba(29, 33, 255, 0.048), 0 12.5px 10px rgba(29, 33, 94, 0.06), 0 22.3px 17.9px rgba(29, 33, 94, 0.072), 0 41.8px 33.4px rgba(29, 33, 94, 0.086), 0 100px 80px rgba(29, 33, 94, 0.12); }
 
 .card-prestation .prestation-name {
   font-weight: 400;
@@ -895,13 +915,7 @@ body {
 
 .card-processus {
   font-size: 16px;
-  border-radius: 16px;
-  min-height: 365px;
-  padding: 10px 20px 20px;
-  border: 1px solid #C8C8EB;
-  border-top: none;
-  border-right: 1px solid rgba(200, 200, 235, 0.5);
-  border-left: 1px solid rgba(200, 200, 235, 0.5); }
+  min-height: 365px; }
   .card-processus .card-header {
     text-align: center; }
     .card-processus .card-header .card-icon {

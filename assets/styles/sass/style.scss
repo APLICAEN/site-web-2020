@@ -760,10 +760,10 @@ body {
   & > :nth-child(2n) {
     background-color: $color-alternate;
   }
+}
 
-  & > * {
-    padding: 0 $padding-large;
-  }
+.site-section > * {
+  padding: 0 $padding-large;
 }
 
 /*--------------------------------------------------------------
@@ -825,10 +825,12 @@ body {
     }
   }
 
-  .prestations-wrapper, .processus-wrapper {
+  .prestations-wrapper, .processus-wrapper,
+  .testimonials-wrapper, .blog-wrapper {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
+    column-gap: 24px;
   }
 
   &.hero-section {
@@ -841,12 +843,21 @@ body {
 }
 
 .processus-wrapper {
-  column-gap: 24px;
   row-gap: 106px;
 }
 
 .credentials-wrapper {
   text-align: center;
+}
+
+.section-content.full-width {
+    padding: 0;
+}
+
+.image-overlay-wrapper {
+  background-color: $color-highlight;
+  background-blend-mode: overlay;
+  height: 470px;
 }
 
 .section-footer {
