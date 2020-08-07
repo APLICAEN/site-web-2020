@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	var siteHeader = document.querySelector(".site-header");
 	var siteContent = document.querySelector(".site-content");
 	// var siteMeta = document.querySelector(".site-metadata");
-	// siteMeta.style.maxHeight = window.innerHeight + "px";
+	// siteMeta.style.minHeight = `${window.innerHeight - siteHeader.clientHeight}px`;
 	siteContent.style.marginTop = `${siteHeader.clientHeight}px`;
 });

@@ -802,40 +802,51 @@ body {
 .site-content > :nth-child(2n) {
   background-color: #ECECFF; }
 
-.site-section > * {
+.site-section > *, .site-metadata > * {
   padding: 0 11.28%; }
 
 /*--------------------------------------------------------------
 10.3 Front Page
 --------------------------------------------------------------*/
-.site-metadata > * {
+.metadata-statistics {
   display: flex;
-  align-items: center;
-  justify-content: space-between; }
+  justify-content: center;
+  flex-wrap: wrap; }
+  .metadata-statistics .statistic-wrapper {
+    text-align: center;
+    width: 12rem; }
+    .metadata-statistics .statistic-wrapper .statistic-desc {
+      font-size: 16px;
+      opacity: .5; }
 
-.site-metadata .metadata-info > * {
-  flex: 1 1 50%; }
-
-.site-metadata .metadata-info .metadata-general {
-  margin-right: 39px;
-  margin-bottom: 44px; }
-
-.site-metadata .metadata-cta .cta-expertises {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap; }
-  .site-metadata .metadata-cta .cta-expertises li {
-    display: inline-block;
-    font-size: 18px;
-    line-height: 21px;
-    font-weight: 600;
-    width: 196px;
-    margin-right: 13px; }
-
-.site-metadata .metadata-cta .cta-primary {
-  margin-right: 0; }
+.site-metadata {
+  padding-bottom: 87px; }
+  .site-metadata > * {
+    display: flex;
+    justify-content: space-between; }
+  .site-metadata .metadata-info > * {
+    flex: 1 1 50%;
+    align-self: flex-start; }
+  .site-metadata .metadata-info .metadata-general {
+    margin-right: 39px; }
+  .site-metadata .metadata-cta {
+    align-items: center; }
+    .site-metadata .metadata-cta .cta-expertises {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap; }
+      .site-metadata .metadata-cta .cta-expertises li {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 600;
+        width: 196px;
+        margin-right: 13px; }
+    .site-metadata .metadata-cta .cta-primary {
+      margin-right: 0; }
 
 .site-section {
   padding-top: 61px;

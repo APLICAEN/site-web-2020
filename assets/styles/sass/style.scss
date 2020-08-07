@@ -765,35 +765,56 @@ body {
   }
 }
 
-.site-section > * {
-  padding: 0 $padding-large;
+.site-section, .site-metadata {
+  & > * {
+  	padding: 0 $padding-large;
+	}
 }
 
 /*--------------------------------------------------------------
 10.3 Front Page
 --------------------------------------------------------------*/
 
+.metadata-statistics {
+	@include flex-h-center;
+	flex-wrap: wrap;
+
+	.statistic-wrapper {
+    text-align: center;
+    width: 12rem;
+
+		.statistic-desc {
+			font-size: 16px;
+			opacity: .5;
+		}
+	}
+}
+
 .site-metadata {
+	padding-bottom: 87px;
+
   & > * {
-    @include flex-v-center;
+    @include flex;
     justify-content: space-between;
   }
 
   .metadata-info {
     & > * {
       flex: 1 1 50%;
+			align-self: flex-start;
     }
 
     .metadata-general {
       margin-right: 39px;
-      margin-bottom: 44px;
     }
   }
 
   .metadata-cta {
+		align-items: center;
     .cta-expertises {
       list-style: none;
       padding: 0;
+			margin: 0;
       @include flex-v-center;
       flex-wrap: nowrap;
 
