@@ -17,7 +17,7 @@
   }
 }
 
-.card-expertise, .card-article,
+.card-expertise, .card-recommended,
 .card-processus, .card-testimonial {
   border-radius: 16px;
   padding: $padding-btn 20px;
@@ -110,20 +110,24 @@
   }
 }
 
-.card-article {
-  .article-thumbnail-wrapper {
+.card-recommended {
+  .recommended-thumbnail-wrapper {
     height: 180px;
     width: 100%;
     background-position: center;
     background-size: contain;
     overflow: hidden;
 
-    .article-thumbnail {
+    .recommended-thumbnail {
       object-fit: cover;
     }
   }
 
-  .article-publish-date {
+  .recommended-title {
+    color: $color-text;
+  }
+
+  .recommended-publish-date {
     text-align: right;
     font-weight: 400;
     margin: $margin-small 0;
@@ -132,9 +136,13 @@
   &:hover {
     border-color: $color-highlight;
 
-    .article-thumbnail {
+    .recommended-thumbnail {
       transform: scale(1.2);
       transition: all .5s ease-in-out;
+    }
+
+    .recommended-title {
+      color: $color-highlight;
     }
   }
 }

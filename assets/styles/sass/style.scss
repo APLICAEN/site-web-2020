@@ -553,9 +553,8 @@ input[type="submit"],
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none;
-  width: 234px;
+  min-width: 234px;
   height: 58px;
-  padding: 0;
   background-color: $color-highlight;
   color: $color-lightwhite;
   @include title-semi-bold;
@@ -764,7 +763,7 @@ body {
   }
 }
 
-.site-section, .site-metadata {
+.site-section, .site-metadata, .entry {
   & > * {
   	padding: 0 $padding-large;
 	}
@@ -847,6 +846,7 @@ body {
 
   .section-title {
     text-align: center;
+		padding: 0 $padding-basic;
   }
 
   .expertises-wrapper {
@@ -859,7 +859,7 @@ body {
   }
 
   .prestations-wrapper, .processus-wrapper,
-  .testimonials-wrapper, .blog-wrapper {
+  .testimonials-wrapper, .recommended-wrapper {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
@@ -898,7 +898,7 @@ body {
   background-blend-mode: overlay;
 	background-size: cover;
 	background-position: center;
-  height: 26rem;
+  min-height: 26rem;
 }
 
 .section-footer {
@@ -980,7 +980,43 @@ body {
 10.5 Posts
 --------------------------------------------------------------*/
 
+.entry {
+	padding-top: 42px;
 
+	& > * {
+    padding-top: 61px;
+    padding-bottom: 87px;
+	}
+
+	& > :nth-child(2n+3) {
+    background-color: $color-alternate;
+	}
+
+	.entry-header {
+		color: $color-lightwhite;
+		display: grid;
+		align-items: center;
+	}
+
+	.entry-title, & > p {
+		margin-right: $padding-basic;
+		margin-left: $padding-basic;
+	}
+
+	.entry-content {
+    padding-top: 61px;
+    padding-bottom: 87px;
+	}
+
+	.site-section.hero-section {
+		background-color: $color-highlight;
+
+		.section-content {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+}
 
 /*--------------------------------------------------------------
 11.0 Navigation

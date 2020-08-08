@@ -636,9 +636,8 @@ input[type="submit"],
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none;
-  width: 234px;
+  min-width: 234px;
   height: 58px;
-  padding: 0;
   background-color: #3A42BC;
   color: #F9F9FF;
   font-weight: 600;
@@ -802,7 +801,7 @@ body {
 .site-content > :nth-child(2n) {
   background-color: #ECECFF; }
 
-.site-section > *, .site-metadata > * {
+.site-section > *, .site-metadata > *, .entry > * {
   padding: 0 11.28%; }
 
 /*--------------------------------------------------------------
@@ -857,14 +856,15 @@ body {
   padding-top: 61px;
   padding-bottom: 87px; }
   .site-section .section-title {
-    text-align: center; }
+    text-align: center;
+    padding: 0 82px; }
   .site-section .expertises-wrapper {
     display: flex;
     align-items: start; }
     .site-section .expertises-wrapper .card-expertise:nth-child(2) {
       margin: 0 24px; }
   .site-section .prestations-wrapper, .site-section .processus-wrapper,
-  .site-section .testimonials-wrapper, .site-section .blog-wrapper {
+  .site-section .testimonials-wrapper, .site-section .recommended-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -891,7 +891,7 @@ body {
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
-  height: 26rem; }
+  min-height: 26rem; }
 
 .section-footer {
   display: flex;
@@ -911,7 +911,7 @@ body {
   .card .card-footer {
     align-self: end; }
 
-.card-expertise, .card-article,
+.card-expertise, .card-recommended,
 .card-processus, .card-testimonial {
   border-radius: 16px;
   padding: 10px 20px 20px;
@@ -974,25 +974,30 @@ body {
       font-weight: 700;
       margin-bottom: 0; }
 
-.card-article .article-thumbnail-wrapper {
+.card-recommended .recommended-thumbnail-wrapper {
   height: 180px;
   width: 100%;
   background-position: center;
   background-size: contain;
   overflow: hidden; }
-  .card-article .article-thumbnail-wrapper .article-thumbnail {
+  .card-recommended .recommended-thumbnail-wrapper .recommended-thumbnail {
     object-fit: cover; }
 
-.card-article .article-publish-date {
+.card-recommended .recommended-title {
+  color: #1D215E; }
+
+.card-recommended .recommended-publish-date {
   text-align: right;
   font-weight: 400;
   margin: 10px 0; }
 
-.card-article:hover {
+.card-recommended:hover {
   border-color: #3A42BC; }
-  .card-article:hover .article-thumbnail {
+  .card-recommended:hover .recommended-thumbnail {
     transform: scale(1.2);
     transition: all .5s ease-in-out; }
+  .card-recommended:hover .recommended-title {
+    color: #3A42BC; }
 
 /*--------------------------------------------------------------
 10.4 Footer
@@ -1043,6 +1048,29 @@ body {
 /*--------------------------------------------------------------
 10.5 Posts
 --------------------------------------------------------------*/
+.entry {
+  padding-top: 42px; }
+  .entry > * {
+    padding-top: 61px;
+    padding-bottom: 87px; }
+  .entry > :nth-child(2n+3) {
+    background-color: #ECECFF; }
+  .entry .entry-header {
+    color: #F9F9FF;
+    display: grid;
+    align-items: center; }
+  .entry .entry-title, .entry > p {
+    margin-right: 82px;
+    margin-left: 82px; }
+  .entry .entry-content {
+    padding-top: 61px;
+    padding-bottom: 87px; }
+  .entry .site-section.hero-section {
+    background-color: #3A42BC; }
+    .entry .site-section.hero-section .section-content {
+      padding-right: 0;
+      padding-left: 0; }
+
 /*--------------------------------------------------------------
 11.0 Navigation
 --------------------------------------------------------------*/
