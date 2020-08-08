@@ -863,6 +863,10 @@ body {
   padding-top: 61px;
   padding-bottom: 87px;
 
+	&.hidden {
+		display: none;
+	}
+
   .section-title {
     text-align: center;
 		padding: 0 $padding-basic;

@@ -873,6 +873,8 @@ body {
 .site-section {
   padding-top: 61px;
   padding-bottom: 87px; }
+  .site-section.hidden {
+    display: none; }
   .site-section .section-title {
     text-align: center;
     padding: 0 82px; }
