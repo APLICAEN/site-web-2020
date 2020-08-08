@@ -864,6 +864,7 @@ body {
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
     column-gap: 24px;
+		row-gap: 106px;
   }
 
   &.hero-section {
@@ -873,10 +874,6 @@ body {
         color: $color-lightwhite;
       }
   }
-}
-
-.processus-wrapper {
-  row-gap: 106px;
 }
 
 .credentials-wrapper {
@@ -938,6 +935,11 @@ body {
 
 .section-collapsed-content-footer {
   color: $color-highlight;
+	justify-items: center;
+
+	.collapsed-cta {
+		justify-self: end;
+	}
 }
 
 .widgets-wrapper {
@@ -998,7 +1000,7 @@ body {
 		align-items: center;
 	}
 
-	.entry-title, & > p {
+	.entry-title > *, & > p {
 		margin-right: $padding-basic;
 		margin-left: $padding-basic;
 	}
