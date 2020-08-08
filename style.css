@@ -1063,6 +1063,9 @@ body {
   .entry .entry-title > *, .entry > p {
     margin-right: 82px;
     margin-left: 82px; }
+  .entry .entry-title.solo {
+    padding-bottom: 0;
+    text-align: center; }
   .entry .entry-content {
     padding-top: 61px;
     padding-bottom: 87px; }

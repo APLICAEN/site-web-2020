@@ -1005,6 +1005,11 @@ body {
 		margin-left: $padding-basic;
 	}
 
+	.entry-title.solo {
+		padding-bottom: 0;
+		text-align: center;
+	}
+
 	.entry-content {
     padding-top: 61px;
     padding-bottom: 87px;
