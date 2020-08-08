@@ -11,6 +11,7 @@
   <?php endif; ?>
   <?php the_content(); ?>
 </article>
+<?php endwhile; endif; ?>
 <!--  MODELE DE PAGE "expertise" seulement : sélection trois prestations -->
 <section class="site-section">
   <div class="section-header">

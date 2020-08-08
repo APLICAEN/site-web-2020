@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <article class="entry">
   <div class="section-header entry-header full-width image-overlay-wrapper"
-  style="background-image: url('./assets/media/images/info.jpg') ;">
+  style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/media/images/info.jpg') ;">
     <h2 class="section-title entry-title">Actualités</h2>
   </div>
 </article>

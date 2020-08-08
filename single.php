@@ -1,25 +1,39 @@
 <?php get_header(); ?>
-<article class="entry">
-  <?php if(has_post_thumbnail()) : ?>
-    <div class="section-header entry-header full-width image-overlay-wrapper"
-    style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+  <article class="entry">
+    <?php if(has_post_thumbnail()) : ?>
+      <div class="section-header entry-header full-width image-overlay-wrapper"
+      style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+      <div class="entry-meta">
+        <h2 class="section-title entry-title"><?php the_title(); ?></h2>
+        <h5 class="recommended-publish-date"><?php echo get_the_date(); ?></h5>
+      </div>
+    </div>
+  <?php else : ?>
     <div class="entry-meta">
-      <h2 class="section-title entry-title"><?php the_title(); ?></h2>
+      <h2 class="section-title entry-title solo"><?php the_title(); ?></h2>
       <h5 class="recommended-publish-date"><?php echo get_the_date(); ?></h5>
     </div>
+  <?php endif; ?>
+  <div class="entry-content">
+    <?php the_content(); ?>
   </div>
-<?php else : ?>
-  <div class="entry-meta">
-    <h2 class="section-title entry-title solo"><?php the_title(); ?></h2>
-    <h5 class="recommended-publish-date"><?php echo get_the_date(); ?></h5>
-  </div>
-<?php endif; ?>
-<div class="entry-content">
-  <?php the_content(); ?>
-</div>
+  <footer class="entry-footer">
+    <?php
+    the_post_navigation(
+      array(
+        'prev_text'          => '<i class="fas fa-arrow-left"></i> Précédent : %title',
+        'next_text'          => 'Suivant : %title <i class="fas fa-arrow-right"></i>'
+      )
+    );
+    ?>
+    <?php comments_template(); ?>
+  </footer>
 </article>
+<?php endwhile; endif; ?>
+
 <!-- WIDGET JETPACK  -->
-<section class="site-section">
+<!-- <section class="site-section">
   <div class="section-header">
     <h2 class="section-title">Autres actualités</h2>
   </div>
@@ -84,5 +98,5 @@
       </article>
     </section>
   </div>
-</section>
+</section> -->
 <?php get_footer(); ?>

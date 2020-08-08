@@ -36,6 +36,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
    10.4 Footer
 	 10.5 Posts
 11.0 Navigation
+12.0 Comments
 13.0 Widgets
 
 -----------------------------------------------------------*/
@@ -1093,6 +1094,16 @@ body {
       padding-right: 0;
       padding-left: 0; }
 
+.post-navigation .nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap; }
+
+.pagination {
+  justify-content: center;
+  padding-top: 61px; }
+
 /*--------------------------------------------------------------
 11.0 Navigation
 --------------------------------------------------------------*/
@@ -1120,6 +1131,54 @@ body {
   .social-links img {
     width: 36px;
     height: 36px; }
+
+.page-numbers.current {
+  font-weight: 700; }
+
+/*--------------------------------------------------------------
+12.0 Comments
+--------------------------------------------------------------*/
+section.comments {
+  margin: 2rem auto;
+  padding: 2rem 0; }
+  section.comments h3 {
+    text-align: center; }
+
+.comment-form * {
+  width: 100%; }
+
+.comment-form label {
+  text-align: left; }
+
+.comment-form input[type="submit"] {
+  width: auto; }
+
+.comment-reply-title {
+  margin-top: 5rem; }
+
+.comment {
+  list-style: none;
+  padding: 2rem;
+  text-align: left; }
+  .comment .children {
+    margin: 1rem auto; }
+
+.comments li.comment:nth-child(2n+1) {
+  background: #C8C8EB; }
+
+.comment-meta,
+.comment-author {
+  margin-bottom: 1rem; }
+
+.form-submit {
+  display: grid; }
+
+.comment-form-cookies-consent {
+  display: flex; }
+
+.comments-pagination {
+  margin-top: 2rem;
+  text-align: center; }
 
 /*--------------------------------------------------------------
 13.0 Widgets
