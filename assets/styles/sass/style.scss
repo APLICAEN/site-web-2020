@@ -709,7 +709,6 @@ html {
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
 	box-sizing: inherit;
-  transition: all .3s ease-in-out;
 }
 
 body {
@@ -776,16 +775,22 @@ body {
 --------------------------------------------------------------*/
 
 .metadata-statistics {
-	@include flex-h-center;
+	@include flex;
 	flex-wrap: wrap;
+	justify-content: flex-end;
 
 	.statistic-wrapper {
     text-align: center;
     width: 12rem;
+		margin: 0 auto;
 
 		.statistic-desc {
 			font-size: 16px;
 			opacity: .5;
+		}
+
+		.statistic-number {
+			margin-bottom: 25px;
 		}
 	}
 }
@@ -806,6 +811,10 @@ body {
 
     .metadata-general {
       margin-right: 39px;
+
+			.metadata-name {
+				margin-bottom: 25px;
+			}
     }
   }
 
@@ -874,14 +883,22 @@ body {
   text-align: center;
 }
 
+.prestations-wrapper {
+	.prestations-column {
+		align-self: center;
+	}
+}
+
 .section-content.full-width {
     padding: 0;
 }
 
 .image-overlay-wrapper {
-  background-color: $color-highlight;
+  background-color: $color-highlight-background;
   background-blend-mode: overlay;
-  height: 470px;
+	background-size: cover;
+	background-position: center;
+  height: 26rem;
 }
 
 .section-footer {

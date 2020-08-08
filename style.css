@@ -420,7 +420,8 @@ blockquote:after {
   .btn-secondary-cta:hover {
     box-shadow: none;
     background-color: #3A42BC;
-    color: #F9F9FF; }
+    color: #F9F9FF;
+    transition: all .3s ease-in-out; }
 
 .btn-tertiary-cta {
   background-color: #F9F9FF;
@@ -759,8 +760,7 @@ html {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
-  box-sizing: inherit;
-  transition: all .3s ease-in-out; }
+  box-sizing: inherit; }
 
 body {
   overflow-x: hidden; }
@@ -810,14 +810,17 @@ body {
 --------------------------------------------------------------*/
 .metadata-statistics {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: flex-end; }
   .metadata-statistics .statistic-wrapper {
     text-align: center;
-    width: 12rem; }
+    width: 12rem;
+    margin: 0 auto; }
     .metadata-statistics .statistic-wrapper .statistic-desc {
       font-size: 16px;
       opacity: .5; }
+    .metadata-statistics .statistic-wrapper .statistic-number {
+      margin-bottom: 25px; }
 
 .site-metadata {
   padding-bottom: 87px; }
@@ -829,6 +832,8 @@ body {
     align-self: flex-start; }
   .site-metadata .metadata-info .metadata-general {
     margin-right: 39px; }
+    .site-metadata .metadata-info .metadata-general .metadata-name {
+      margin-bottom: 25px; }
   .site-metadata .metadata-cta {
     align-items: center; }
     .site-metadata .metadata-cta .cta-expertises {
@@ -875,13 +880,18 @@ body {
 .credentials-wrapper {
   text-align: center; }
 
+.prestations-wrapper .prestations-column {
+  align-self: center; }
+
 .section-content.full-width {
   padding: 0; }
 
 .image-overlay-wrapper {
-  background-color: #3A42BC;
+  background-color: rgba(58, 66, 188, 0.5);
   background-blend-mode: overlay;
-  height: 470px; }
+  background-size: cover;
+  background-position: center;
+  height: 26rem; }
 
 .section-footer {
   display: flex;
@@ -889,12 +899,17 @@ body {
   justify-content: center;
   margin-top: 44px; }
 
-.card .card-link {
-  color: #1D215E;
-  text-decoration: none; }
-  .card .card-link :hover {
-    border: none;
-    text-decoration: none; }
+.card {
+  display: grid; }
+  .card .card-link {
+    color: #1D215E;
+    text-decoration: none;
+    border: none; }
+    .card .card-link :hover {
+      border: none;
+      text-decoration: none; }
+  .card .card-footer {
+    align-self: end; }
 
 .card-expertise, .card-article,
 .card-processus, .card-testimonial {
@@ -921,25 +936,43 @@ body {
     text-align: right;
     align-self: end; }
 
-.card-prestation .prestation-name {
-  font-weight: 400;
-  font-size: 20px;
+.card-prestation {
   border: 1px solid #C8C8EB;
   border-radius: 20px;
   padding: 28px 49px;
-  color: #1D215E; }
-  .card-prestation .prestation-name:hover {
-    background-color: #3A42BC;
-    color: #F9F9FF; }
+  margin: 44px; }
+  .card-prestation .prestation-name {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0; }
+  .card-prestation * {
+    transition: all .3s ease-in-out; }
+  .card-prestation:hover {
+    background-color: #3A42BC; }
+    .card-prestation:hover .prestation-name {
+      color: #F9F9FF; }
 
 .card-processus {
   font-size: 16px;
-  min-height: 365px; }
+  display: block; }
   .card-processus .card-header {
     text-align: center; }
     .card-processus .card-header .card-icon {
       width: 96px;
       height: 96px; }
+
+.card-testimonial {
+  grid-row-gap: 55px; }
+  .card-testimonial .card-footer {
+    text-align: center; }
+    .card-testimonial .card-footer .author-picture {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 13px; }
+    .card-testimonial .card-footer .author-name {
+      font-weight: 700;
+      margin-bottom: 0; }
 
 .card-article .article-thumbnail-wrapper {
   height: 180px;
@@ -948,8 +981,7 @@ body {
   background-size: contain;
   overflow: hidden; }
   .card-article .article-thumbnail-wrapper .article-thumbnail {
-    width: 100%;
-    height: auto; }
+    object-fit: cover; }
 
 .card-article .article-publish-date {
   text-align: right;
