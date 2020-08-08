@@ -1000,7 +1000,7 @@ body {
 		align-items: center;
 	}
 
-	.entry-title > *, & > p {
+	.entry-title, .entry-meta > *, & > p {
 		margin-right: $padding-basic;
 		margin-left: $padding-basic;
 	}

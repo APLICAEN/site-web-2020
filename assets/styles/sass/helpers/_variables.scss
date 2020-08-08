@@ -26,6 +26,8 @@ $color-secondary: #C8C8EB;
 $color-alternate: #ECECFF;
 $border-gradient: linear-gradient(to bottom, rgba(200, 200, 235, 0),
 rgba(200, 200, 235, 96.29), rgba(200, 200, 235, 100));
+$border-gradient-highlight: linear-gradient(to bottom, rgba(58,66,188, 0),
+rgba(58,66,188, 96.29), rgba(58,66,188, 100));
 $color-highlight-background: rgba(58,66,188, .5);
 
 // Layout

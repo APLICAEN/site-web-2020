@@ -1060,7 +1060,7 @@ body {
     color: #F9F9FF;
     display: grid;
     align-items: center; }
-  .entry .entry-title > *, .entry > p {
+  .entry .entry-title, .entry .entry-meta > *, .entry > p {
     margin-right: 82px;
     margin-left: 82px; }
   .entry .entry-title.solo {
