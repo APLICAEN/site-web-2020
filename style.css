@@ -1,4 +1,21 @@
 @charset "UTF-8";
+/*
+
+Theme name: Aplicaen
+Author: Geneviève Masioni
+Author URI : http://genevievemasioni.com/
+Description: Aplicaen est un thème développé dans le cadre de la refonte graphique de 2020.
+Version: 1.0.0
+Requires at least: 4.7
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: aplicaen
+Tags: blog, front page, menus, one-column, footer-widgets, featured-images,
+theme-options, threaded-comments
+
+This theme is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
 /*-----------------------------------------------------------
 >>> Table of Contents
 -------------------------------------------------------------
@@ -979,7 +996,8 @@ body {
   background-size: contain;
   overflow: hidden; }
   .card-recommended .recommended-thumbnail-wrapper .recommended-thumbnail {
-    object-fit: cover; }
+    width: 100%;
+    height: auto; }
 
 .card-recommended .recommended-title {
   color: #1D215E; }

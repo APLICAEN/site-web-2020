@@ -8,121 +8,38 @@
 <section class="site-section">
   <div class="section-content">
     <section class="recommended-wrapper">
+
+      <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
       <article class="card card-recommended">
         <div class="recommended-header">
           <a href="#" class="card-link">
             <div class="recommended-thumbnail-wrapper">
-              <img src="./assets/media/images/info.jpg" alt="Icon startup" class="recommended-thumbnail">
+              <?php if(has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('post-thumbnail', ['class' => 'recommended-thumbnail']); ?>
+              <?php endif; ?>
             </div>
           </a>
-          <h6 class="recommended-publish-date">25/03/2020</h6>
-          <a href="#" class="card-link">
-            <h4 class="recommended-title">5 bonnes raisons de faire appel à une JE</h4>
+          <h6 class="recommended-publish-date"><?php echo get_the_date(); ?></h6>
+          <a href="<?php the_permalink(); ?>" class="card-link">
+            <h4 class="recommended-title"><?php the_title(); ?></h4>
           </a>
         </div>
         <div class="recommended-content">
-          <p>
-            culpa dolore pariatur quis consequat ex deserunt cupidatat.
-            Aute do cillum laborum ut occaecat. Officia
-          </p>
+          <?php the_excerpt(); ?>
         </div>
       </article>
-      <article class="card card-recommended">
-        <div class="recommended-header">
-          <a href="#" class="card-link">
-            <div class="recommended-thumbnail-wrapper">
-              <img src="./assets/media/images/info.jpg" alt="Icon startup" class="recommended-thumbnail">
-            </div>
-          </a>
-          <h6 class="recommended-publish-date">25/03/2020</h6>
-          <a href="#">
-            <h4 class="recommended-title">5 bonnes raisons de faire appel à une JE</h4>
-          </a>
-        </div>
-        <div class="recommended-content">
-          <p>
-            culpa dolore pariatur quis consequat ex deserunt cupidatat.
-            Aute do cillum laborum ut occaecat. Officia
-          </p>
-        </div>
-      </article>
-      <article class="card card-recommended">
-        <div class="recommended-header">
-          <a href="#" class="card-link">
-            <div class="recommended-thumbnail-wrapper">
-              <img src="./assets/media/images/info.jpg" alt="Icon startup" class="recommended-thumbnail">
-            </div>
-          </a>
-          <h6 class="recommended-publish-date">25/03/2020</h6>
-          <a href="#">
-            <h4 class="recommended-title">5 bonnes raisons de faire appel à une JE</h4>
-          </a>
-        </div>
-        <div class="recommended-content">
-          <p>
-            culpa dolore pariatur quis consequat ex deserunt cupidatat.
-            Aute do cillum laborum ut occaecat. Officia
-          </p>
-        </div>
-      </article>
-      <article class="card card-recommended">
-        <div class="recommended-header">
-          <a href="#" class="card-link">
-            <div class="recommended-thumbnail-wrapper">
-              <img src="./assets/media/images/info.jpg" alt="Icon startup" class="recommended-thumbnail">
-            </div>
-          </a>
-          <h6 class="recommended-publish-date">25/03/2020</h6>
-          <a href="#" class="card-link">
-            <h4 class="recommended-title">5 bonnes raisons de faire appel à une JE</h4>
-          </a>
-        </div>
-        <div class="recommended-content">
-          <p>
-            culpa dolore pariatur quis consequat ex deserunt cupidatat.
-            Aute do cillum laborum ut occaecat. Officia
-          </p>
-        </div>
-      </article>
-      <article class="card card-recommended">
-        <div class="recommended-header">
-          <a href="#" class="card-link">
-            <div class="recommended-thumbnail-wrapper">
-              <img src="./assets/media/images/info.jpg" alt="Icon startup" class="recommended-thumbnail">
-            </div>
-          </a>
-          <h6 class="recommended-publish-date">25/03/2020</h6>
-          <a href="#" class="card-link">
-            <h4 class="recommended-title">5 bonnes raisons de faire appel à une JE</h4>
-          </a>
-        </div>
-        <div class="recommended-content">
-          <p>
-            culpa dolore pariatur quis consequat ex deserunt cupidatat.
-            Aute do cillum laborum ut occaecat. Officia
-          </p>
-        </div>
-      </article>
-      <article class="card card-recommended">
-        <div class="recommended-header">
-          <a href="#" class="card-link">
-            <div class="recommended-thumbnail-wrapper">
-              <img src="./assets/media/images/info.jpg" alt="Icon startup" class="recommended-thumbnail">
-            </div>
-          </a>
-          <h6 class="recommended-publish-date">25/03/2020</h6>
-          <a href="#" class="card-link">
-            <h4 class="recommended-title">5 bonnes raisons de faire appel à une JE</h4>
-          </a>
-        </div>
-        <div class="recommended-content">
-          <p>
-            culpa dolore pariatur quis consequat ex deserunt cupidatat.
-            Aute do cillum laborum ut occaecat. Officia
-          </p>
-        </div>
-      </article>
+    <?php endwhile; endif; ?>
     </section>
+    <nav class="navigation pagination">
+      <?php
+      the_posts_pagination(
+        array(
+          'prev_text'          => '<i class="fas fa-arrow-left"></i> Précédent',
+          'next_text'          => 'Suivant <i class="fas fa-arrow-right"></i>'
+        )
+      );
+      ?>
+    </nav>
   </div>
 </section>
 <?php get_footer(); ?>

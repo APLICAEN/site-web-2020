@@ -62,11 +62,21 @@
     </section>
   </section>
   <section class="social-links">
-    <a href="#" target="_blank"><img src="./assets/media/images/icon-linkedin.svg" alt="Linkedin"></a>
-    <a href="#" target="_blank"><img src="./assets/media/images/icon-facebook.svg" alt="Facebook"></a>
-    <a href="#" target="_blank"><img src="./assets/media/images/icon-instagram.svg" alt="Instagram"></a>
-    <a href="#" target="_blank"><img src="./assets/media/images/icon-youtube.svg" alt="Youtube"></a>
-    <a href="#" target="_blank"><img src="./assets/media/images/icon-twitter.svg" alt="Twitter"></a>
+    <a href="#" target="_blank">
+      <img src="<?php get_template_directory() . '/assets/media/images/icon-linkedin.svg' ?>" alt="LinkedIn">
+    </a>
+    <a href="#" target="_blank">
+      <img src="<?php get_template_directory() . '/assets/media/images/icon-facebook.svg' ?>" alt="Facebook">
+    </a>
+    <a href="#" target="_blank">
+      <img src="<?php get_template_directory() . '/assets/media/images/icon-instagram.svg' ?>" alt="Instagram">
+    </a>
+    <a href="#" target="_blank">
+      <img src="<?php get_template_directory() . '/assets/media/images/icon-youtube.svg' ?>" alt="Youtube">
+    </a>
+    <a href="#" target="_blank">
+      <img src="<?php get_template_directory() . '/assets/media/images/icon-twitter.svg' ?>" alt="Twitter">
+    </a>
   </section>
   <section class="site-credits">
     <div class="site-branding">
@@ -91,5 +101,6 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/js/OverlayScrollbars.min.js" integrity="sha512-5R3ngaUdvyhXkQkIqTf/k+Noq3phjmrqlUQyQYbgfI34Mzcx7vLIIYTy/K1VMHkL33T709kfh5y6R9Xy/Cbt7Q==" crossorigin="anonymous"></script>
 <script src="<?php get_template_directory() . '/assets/scripts/main.js'?>" type="text/javascript"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
