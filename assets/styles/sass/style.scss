@@ -700,14 +700,18 @@ a {
     color: $color-text;
   }
 
-  main &:hover {
-    border-bottom: 2px solid $color-highlight;
-  }
-
   &:active, .navigation &.active {
   	color: $color-highlight;
   	outline: 0;
   }
+}
+
+main a:hover {
+	border-bottom: 2px solid $color-highlight;
+}
+
+main a.cta-link:hover {
+    border: none;
 }
 
 /*--------------------------------------------------------------
@@ -1068,7 +1072,7 @@ body {
 
 .widget-section {
 	margin-bottom: 1.5rem;
-	
+
 	.menu {
 	  list-style: none;
 	  padding: 0;

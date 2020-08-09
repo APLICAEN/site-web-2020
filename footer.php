@@ -9,7 +9,9 @@
       <h6><?php echo get_theme_mod("contact_info_2"); ?></h6>
       <div class="collapsed-cta">
         <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("contact_cta_url")); ?>">
-        <button type="button" class="section-cta"><?php echo get_theme_mod("contact_cta_text"); ?></button>
+        <button type="button" class="section-cta">
+          <?php echo get_theme_mod("contact_cta_text"); ?>
+        </button>
       </a>
       </div>
     </div>

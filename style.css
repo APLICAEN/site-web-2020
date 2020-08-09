@@ -757,11 +757,15 @@ a {
     outline: thin dotted; }
   a:hover {
     color: #1D215E; }
-  main a:hover {
-    border-bottom: 2px solid #3A42BC; }
   a:active, .navigation a.active {
     color: #3A42BC;
     outline: 0; }
+
+main a:hover {
+  border-bottom: 2px solid #3A42BC; }
+
+main a.cta-link:hover {
+  border: none; }
 
 /*--------------------------------------------------------------
 10.0 Layout
