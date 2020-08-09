@@ -2,13 +2,15 @@
 <footer class="site-footer">
   <section class="site-section">
     <div class="section-header">
-      <h2 class="section-title">Nous contacter</h2>
+      <h2 class="section-title"><?php echo get_theme_mod("contact_title"); ?></h2>
     </div>
     <div class="section-collapsed-content-footer">
-      <h6>Tel : 00 00 00 00 00</h6>
-      <h6>Mail : contact@aplicaen.fr</h6>
+      <h6><?php echo get_theme_mod("contact_info_1"); ?></h6>
+      <h6><?php echo get_theme_mod("contact_info_2"); ?></h6>
       <div class="collapsed-cta">
-        <button type="button" class="section-cta">Demander un devis</button>
+        <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("contact_cta_url")); ?>">
+        <button type="button" class="section-cta"><?php echo get_theme_mod("contact_cta_text"); ?></button>
+      </a>
       </div>
     </div>
   </section>
@@ -62,21 +64,22 @@
     </section>
   </section>
   <section class="social-links">
-    <a href="#" target="_blank">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/media/images/icon-linkedin.svg" alt="LinkedIn">
-    </a>
-    <a href="#" target="_blank">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/media/images/icon-facebook.svg" alt="Facebook">
-    </a>
-    <a href="#" target="_blank">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/media/images/icon-instagram.svg" alt="Instagram">
-    </a>
-    <a href="#" target="_blank">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/media/images/icon-youtube.svg" alt="Youtube">
-    </a>
-    <a href="#" target="_blank">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/media/images/icon-twitter.svg" alt="Twitter">
-    </a>
+    <?php
+    $social_networks = array("linkedin", "facebook", "instagram", "youtube", "twitter");
+    $uri = get_template_directory_uri();
+    foreach($social_networks as $network) {
+      $id = "social_" . $network . "_url";
+      $url = get_theme_mod($id);
+      $url = isset($url) ? trim($url) : false;
+
+      if(!empty($url)) {
+        $html = '<a href="' . $url . '" target="_blank">
+        <img src="' . $uri . '/assets/media/images/icon-' . $network . '.svg"
+        alt="' . $network . '"></a>';
+        echo $html;
+      }
+    }
+    ?>
   </section>
   <section class="site-credits">
     <div class="site-branding">
@@ -85,7 +88,11 @@
     </div>
     <div class="site-copyright">
       <p>
-        © Copyright 2020 Aplicaen
+        <?php
+          echo get_theme_mod("credits_text") . ' ' . date("Y");
+          echo ' ';
+          bloginfo('name');
+        ?>
       </p>
     </div>
     <div class="site-labels">

@@ -1109,6 +1109,18 @@ body {
 /*--------------------------------------------------------------
 11.0 Navigation
 --------------------------------------------------------------*/
+.widget-section {
+  margin-bottom: 1.5rem; }
+  .widget-section .menu {
+    list-style: none;
+    padding: 0; }
+    .widget-section .menu li {
+      margin-bottom: 11px; }
+      .widget-section .menu li a {
+        color: #1D215E; }
+        .widget-section .menu li a:hover {
+          color: #3A42BC; }
+
 .navigation {
   display: flex;
   align-items: center;
@@ -1185,5 +1197,8 @@ section.comments {
 /*--------------------------------------------------------------
 13.0 Widgets
 --------------------------------------------------------------*/
-.widget-section .widget-content :not(button) {
-  font-size: 12px; }
+.widget-section :nth-child(2) {
+  font-size: 14px; }
+
+.widget-section p {
+  margin: 0; }

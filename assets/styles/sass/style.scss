@@ -1066,6 +1066,27 @@ body {
 11.0 Navigation
 --------------------------------------------------------------*/
 
+.widget-section {
+	margin-bottom: 1.5rem;
+	
+	.menu {
+	  list-style: none;
+	  padding: 0;
+
+		li {
+			margin-bottom: 11px;
+
+			a {
+				color: $color-text;
+
+				&:hover {
+					color: $color-highlight;
+				}
+			}
+		}
+	}
+}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -1177,7 +1198,11 @@ section.comments {
 --------------------------------------------------------------*/
 
 .widget-section {
-  .widget-content :not(button) {
-    font-size: 12px;
+  :nth-child(2) {
+    font-size: 14px;
   }
+
+	p {
+		margin: 0;
+	}
 }
