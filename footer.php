@@ -65,6 +65,7 @@
         echo $html;
       }
     }
+    unset($network);
     ?>
   </section>
   <section class="site-credits">
