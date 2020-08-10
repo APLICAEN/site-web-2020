@@ -1,9 +1,11 @@
 <section class="comments">
+  <?php if(have_comments()) : ?>
   <h3 class="comments-title">
     <?php comments_number('Aucun commentaire', '1 commentaire',
     '% commentaires'); ?>
   </h3>
   <?php
+  endif;
 
   wp_list_comments();
 

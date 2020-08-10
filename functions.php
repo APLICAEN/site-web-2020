@@ -13,11 +13,31 @@ function aplicaen_setup() {
 
 add_action('after_setup_theme', 'aplicaen_setup');
 
+/**
+ * Change the excerpt length
+ */
+
+function aplicaen_custom_excerpt_length( $length ) {
+    return 20;
+}
+
+add_filter( 'excerpt_length', 'aplicaen_custom_excerpt_length', 999 );
+
+/**
+ * Change the excerpt more string
+ */
+function aplicaen_custom_excerpt_more( $more ) {
+    return "...";
+}
+
+add_filter( 'excerpt_more', 'aplicaen_custom_excerpt_more', 999);
+
+
 function aplicaen_init_widgets() {
   register_sidebar(
     array(
       'id'  => 'widgets-section-1',
-      'name'  => 'Zone de widgets 1',
+      'name'  => 'Widgets colonne 1',
       'description' => 'Utiliser cette zone de widgets pour afficher les
                         informations de contact de l\'association.',
       'before_widget' => '',
@@ -30,7 +50,7 @@ function aplicaen_init_widgets() {
   register_sidebar(
     array(
       'id'  => 'widgets-section-2',
-      'name'  => 'Zone de widgets 2',
+      'name'  => 'Widgets colonne 2',
       'description' => 'Utiliser cette zone de widgets pour afficher des
                         informations sur l\'offre de prestations.',
       'before_widget' => '',
@@ -43,7 +63,7 @@ function aplicaen_init_widgets() {
   register_sidebar(
     array(
       'id'  => 'widgets-section-3',
-      'name'  => 'Zone de widgets 3',
+      'name'  => 'Widgets colonne 3',
       'description' => 'Utiliser cette zone de widgets pour afficher des
                         informations annexes : RGPD, politique qualité,
                         mentions légales...',
@@ -57,7 +77,7 @@ function aplicaen_init_widgets() {
   register_sidebar(
     array(
       'id'  => 'widgets-section-4',
-      'name'  => 'Zone de widgets 4',
+      'name'  => 'Widgets colonne 4',
       'description' => 'Utiliser cette zone de widgets pour afficher les
                         informations utiles pour les étudiants et un lien vers
                         l\'espace adhérent.',
@@ -71,7 +91,7 @@ function aplicaen_init_widgets() {
   register_sidebar(
     array(
       'id'  => 'widgets-section-5',
-      'name'  => 'Zone de widgets 5',
+      'name'  => 'Widgets pied de page',
       'description' => 'Utiliser cette zone de widgets pour afficher des
                         les labels de l\'association : CNJE, ISO 9001, NF Service...',
       'before_widget' => '',

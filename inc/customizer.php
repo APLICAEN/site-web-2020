@@ -160,6 +160,53 @@ function aplicaen_customize_register_footer($wp_customize) {
   );
 
   $wp_customize -> add_section(
+    'section_intranet',
+    array(
+      'title'         => 'Espace adhérent',
+      'description'   => 'Redirection vers l\'espace adhérent pour les étudiants et administrateurs.',
+      'panel'         => 'panel_footer'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'intranet_cta_text',
+    array(
+    'default'     => 'Espace adhérent',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'intranet_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_intranet',
+      'setting'        => 'intranet_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'intranet_cta_url',
+    array(
+      'default'     => 'http://vive.aplicaen.fr/connexion',
+      'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'intranet_cta_url',
+    array(
+      'label'          => 'Lien',
+      'description'    => 'Page externe vers laquelle doit rediriger le bouton.',
+      'section'        => 'section_intranet',
+      'setting'        => 'intranet_cta_url',
+      'type'           => 'url'
+    )
+  );
+
+  $wp_customize -> add_section(
     'section_social_links',
     array(
       'title'         => 'Réseaux sociaux',
@@ -1006,7 +1053,7 @@ function aplicaen_customize_register_homepage($wp_customize) {
     'credentials_desc',
     array(
     'default'     => 'Nous faire confiance, c\'est faire le même choix que nos
-    anciens clients et partenaires ',
+    anciens clients et partenaires.',
     'type'        => 'theme_mod'
     )
   );
@@ -1077,8 +1124,279 @@ function aplicaen_customize_register_homepage($wp_customize) {
       'type'           => 'dropdown-pages'
     )
   );
-}
 
+  $wp_customize -> add_section(
+    'section_testimonials',
+    array(
+      'title'         => 'Témoignages',
+      'description'   => 'Sélection de témoignages de partenaires et clients pour la preuve sociale.',
+      'panel'         => 'panel_homepage'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_hidden',
+    array(
+    'default'     => false,
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_hidden',
+    array(
+      'label'          => 'Masquer cette section.',
+      'description'    => 'Cocher cette case pour masquer cette section de la page.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_hidden',
+      'type'           => 'checkbox'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_title',
+    array(
+    'default'     => 'Ils en parlent le mieux',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_title',
+    array(
+      'label'          => 'Titre',
+      'description'    => 'Titre de la section.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_title',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_cta_text',
+    array(
+    'default'     => 'Tous nos témoignages',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_cta_url',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_cta_url',
+    array(
+      'label'          => 'Lien',
+      'description'    => 'Page vers laquelle doit rediriger le bouton.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_cta_url',
+      'type'           => 'dropdown-pages'
+    )
+  );
+
+  $wp_customize -> add_section(
+    'section_team',
+    array(
+      'title'         => 'Équipe',
+      'description'   => 'Photo de groupe du mandat actuel.',
+      'panel'         => 'panel_homepage'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'team_hidden',
+    array(
+    'default'     => false,
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'team_hidden',
+    array(
+      'label'          => 'Masquer cette section.',
+      'description'    => 'Cocher cette case pour masquer cette section de la page.',
+      'section'        => 'section_team',
+      'setting'        => 'team_hidden',
+      'type'           => 'checkbox'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'team_title',
+    array(
+    'default'     => 'Notre équipe',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'team_title',
+    array(
+      'label'          => 'Titre',
+      'description'    => 'Titre de la section.',
+      'section'        => 'section_team',
+      'setting'        => 'team_title',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'team_image',
+    array(
+      'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'team_image',
+      array (
+        'label' => 'Image d\'illustration',
+        'section' => 'section_team',
+        'setting' => 'team_image'
+      )
+    )
+  );
+
+  $wp_customize->add_setting(
+    'team_cta_text',
+    array(
+    'default'     => 'Nous connaître',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'team_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_team',
+      'setting'        => 'team_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'team_cta_url',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'team_cta_url',
+    array(
+      'label'          => 'Lien',
+      'description'    => 'Page vers laquelle doit rediriger le bouton.',
+      'section'        => 'section_team',
+      'setting'        => 'team_cta_url',
+      'type'           => 'dropdown-pages'
+    )
+  );
+
+  $wp_customize -> add_section(
+    'section_news',
+    array(
+      'title'         => 'Actualité',
+      'description'   => 'Photo de groupe du mandat actuel.',
+      'panel'         => 'panel_homepage'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'news_hidden',
+    array(
+    'default'     => false,
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'news_hidden',
+    array(
+      'label'          => 'Masquer cette section.',
+      'description'    => 'Cocher cette case pour masquer cette section de la page.',
+      'section'        => 'section_news',
+      'setting'        => 'news_hidden',
+      'type'           => 'checkbox'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'news_title',
+    array(
+    'default'     => 'Notre actualité',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'news_title',
+    array(
+      'label'          => 'Titre',
+      'description'    => 'Titre de la section.',
+      'section'        => 'section_news',
+      'setting'        => 'news_title',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'news_cta_text',
+    array(
+    'default'     => 'Toute notre actualité',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'news_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_news',
+      'setting'        => 'news_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'news_cta_url',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'news_cta_url',
+    array(
+      'label'          => 'Lien',
+      'description'    => 'Page vers laquelle doit rediriger le bouton.',
+      'section'        => 'section_news',
+      'setting'        => 'news_cta_url',
+      'type'           => 'dropdown-pages'
+    )
+  );
+
+}
 
 add_action('customize_register', 'aplicaen_customize_register_blog');
 add_action('customize_register', 'aplicaen_customize_register_footer');

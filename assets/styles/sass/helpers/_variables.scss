@@ -1,5 +1,7 @@
 // Fonts
 $font-size-base: 18px;
+$font-size-big: 21px;
+$font-size-small: 14px;
 $font-family-base: 'Work Sans', sans-serif;
 $font-family-title: 'Work Sans', sans-serif;
 $font-family-formatted: "Courier", Courier, monospace;
@@ -23,12 +25,12 @@ $color-highlight: #3A42BC;
 $color-text: #1D215E;
 $color-white: #F1F1F1;
 $color-secondary: #C8C8EB;
-$color-alternate: #ECECFF;
+$color-alternate: rgba(236,236,255, .6);
 $border-gradient: linear-gradient(to bottom, rgba(200, 200, 235, 0),
 rgba(200, 200, 235, 96.29), rgba(200, 200, 235, 100));
 $border-gradient-highlight: linear-gradient(to bottom, rgba(58,66,188, 0),
 rgba(58,66,188, 96.29), rgba(58,66,188, 100));
-$color-highlight-background: rgba(58,66,188, .5);
+$color-highlight-background: rgba(58,66,188, .4);
 
 // Layout
 $padding-basic: 82px;
@@ -61,3 +63,8 @@ $box-shadow-dreamy: 0 1px 2px rgba(29, 33, 94,0.07),
 
 $radius-soft: 15px;
 $radius-hard: 50px;
+
+$border-prefix: 1px solid;
+$border-base: $border-prefix $color-highlight;
+$transition-base: all .6s ease-in-out;
+$transition-base-short: all .3s ease-in-out;

@@ -79,3 +79,18 @@
   line-height: $line-height-h6;
   @include title-semi-bold;
 }
+
+@mixin text-base {
+  font-size: $font-size-base;
+  line-height: 1.5rem;
+}
+
+@mixin text-big {
+  font-size: $font-size-big;
+  line-height: 37.4px;
+}
+
+@mixin text-small {
+  font-size: $font-size-small;
+  line-height: 16px;
+}

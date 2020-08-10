@@ -1,5 +1,8 @@
 .card {
   display: grid;
+  border: none;
+  border-radius: 16px;
+  padding: 20px;
 
   .card-link {
     color: $color-text;
@@ -19,13 +22,8 @@
 
 .card-expertise, .card-recommended,
 .card-processus, .card-testimonial {
-  border-radius: 16px;
-  padding: $padding-btn 20px;
   box-sizing: content-box;
-  border: 1px solid $color-secondary;
-  border-top: none;
-  border-right: 1px solid rgba(200, 200, 235, .5);
-  border-left: 1px solid rgba(200, 200, 235, .5);
+  border: $border-prefix $color-secondary;
 }
 
 .card-expertise {
@@ -37,7 +35,7 @@
   &:hover {
     box-shadow: $box-shadow-card;
     transform: scale(1.1);
-    transition: all .3s ease-in-out;
+    transition: $transition-base-short;
   }
 
    * {
@@ -46,12 +44,12 @@
 
    .expertise-cta {
      text-align: right;
-     align-self: end;
+     @include title-semi-bold;
    }
 }
 
 .card-prestation {
-  border: 1px solid $color-secondary;
+  border: $border-prefix $color-secondary;
   border-radius: 20px;
   padding: 28px 49px;
   margin: 44px;
@@ -68,6 +66,7 @@
 
   &:hover {
     background-color: $color-highlight;
+    transition: $transition-base;
 
     .prestation-name {
       color: $color-lightwhite;
@@ -126,12 +125,14 @@
 
   .recommended-title {
     color: $color-text;
+    margin-top: .5rem;
   }
 
   .recommended-publish-date {
     text-align: right;
     font-weight: 400;
     margin: $margin-small 0;
+    opacity: .5;
   }
 
   &:hover {

@@ -27,8 +27,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 1.0 Normalize
 2.0 Accessibility
 3.0 Typography
-4.0 Controls
-5.0 Forms
+4.0 Forms
+5.0 Controls
 6.0 Formatting
 7.0 Lists
 8.0 Tables
@@ -109,7 +109,7 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: 1px #767676 dotted;
+	border-bottom: 1px $color-secondary dotted;
 	text-decoration: none;
 }
 
@@ -218,11 +218,11 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
+	outline: none;
 }
 
 fieldset {
-	border: 1px solid #bbb;
+	border: $border-base;
 	margin: 0 2px;
 	padding: 0.35em 0.625em 0.75em;
 }
@@ -321,13 +321,13 @@ template {
 	clip: auto !important;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
+	font-size: $font-size-small;
 	font-size: 0.875rem;
 	font-weight: 900;
 	height: auto;
 	left: 5px;
 	line-height: normal;
-	padding: 15px 23px 14px;
+	padding: 15px 23px $font-size-small;
 	text-decoration: none;
 	top: 5px;
 	width: auto;
@@ -339,7 +339,7 @@ template {
 --------------------------------------------------------------*/
 
 html, body {
-  font-size: $font-size-base;
+	@include text-base;
   font-family: $font-family-base;
   font-weight: $font-weight-base;
   color: $color-text;
@@ -348,7 +348,7 @@ html, body {
 
 * {
   border-color: $color-secondary;
-  outline-color: $color-secondary;
+  outline-color: transparent;
 }
 
 button,
@@ -414,7 +414,6 @@ h6 {
 p {
 	margin: 0 0 1.5em;
 	padding: 0;
-  line-height: 2.14rem;
 }
 
 dfn,
@@ -427,11 +426,28 @@ i {
 blockquote {
 	color: $color-highlight;
   @include title-bold;
-}
+	border-radius: 16px;
+	border: $border-base;
+	padding: 20px;
+	quotes: "" "";
 
-blockquote cite {
-	display: block;
-	font-style: normal;
+	&::before, &::after {
+    font-family: 'Font Awesome', FontAwesome;
+	}
+
+	&::before {
+		content: "\f10d";
+	}
+
+	&::after {
+		content: "\f10e";
+	}
+
+	cite {
+		display: block;
+		font-weight: 400;
+		font-style: normal;
+	}
 }
 
 address {
@@ -470,17 +486,8 @@ big {
 	font-size: 125%;
 }
 
-blockquote {
-	quotes: "" "";
-}
-
 q {
 	quotes: "“" "”" "‘" "’";
-}
-
-blockquote:before,
-blockquote:after {
-	content: "";
 }
 
 :focus {
@@ -493,14 +500,7 @@ blockquote:after {
 }
 
 /*--------------------------------------------------------------
-4.0 Controls
---------------------------------------------------------------*/
-
-@import "components/controls";
-
-
-/*--------------------------------------------------------------
-5.0 Forms
+4.0 Forms
 --------------------------------------------------------------*/
 
 fieldset {
@@ -526,7 +526,6 @@ input[type="color"],
 textarea {
 	background: $color-secondary;
   border: none;
-	border-bottom: .07rem solid $color-secondary;
 	display: inline-block;
 	padding: $padding-btn;
 }
@@ -550,7 +549,6 @@ textarea:focus {
 	color: $color-highlight;
 	border-color: $color-highlight;
   background-color: $color-lightwhite;
-  border: .07rem solid $color-highlight;
 }
 
 select {
@@ -558,14 +556,7 @@ select {
 	max-width: 100%;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  &:focus {
-  	outline: thin solid $color-highlight;
-  }
-}
-
-button,
+button:not(.swiper-pagination-bullet),
 input[type="button"],
 input[type="submit"],
 [type="reset"] {
@@ -603,6 +594,12 @@ input[type="submit"],
 	opacity: 1;
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
+
+/*--------------------------------------------------------------
+5.0 Controls
+--------------------------------------------------------------*/
+
+@import "components/controls";
 
 /*--------------------------------------------------------------
 6.0 Formatting
@@ -693,7 +690,7 @@ a {
 	text-decoration: none;
 
   &:focus {
-  	outline: thin dotted;
+  	outline: none;
   }
 
   &:hover {
@@ -702,7 +699,7 @@ a {
 
   &:active, .navigation &.active {
   	color: $color-highlight;
-  	outline: 0;
+  	outline: none;
   }
 }
 
@@ -989,7 +986,7 @@ body {
 	}
 
   .site-copyright {
-    font-size: 12px;
+    @include text-small;
     text-align: center;
 		grid-column: 2;
   }
@@ -997,10 +994,12 @@ body {
   .site-labels {
     text-align: end;
 		grid-column: 3;
+		@include flex-v-center;
+		justify-content: flex-end;
 
     img {
       height: 100%;
-      width: auto;
+      width: 4rem;
     }
   }
 }
@@ -1027,10 +1026,25 @@ body {
 		align-items: center;
 	}
 
-	.entry-title, .entry-meta > *, & > p {
-		margin-right: $padding-basic;
-		margin-left: $padding-basic;
+	.entry-meta *, .entry-title {
+		text-align: center;
 	}
+
+	 p, .entry-content * {
+		 margin-left: auto;
+		 margin-right: auto;
+		 line-height: 37.4px;
+		 width: 75%;
+	 }
+
+	 p, .entry-content:not(h1),
+	 .entry-content:not(h2),
+	 .entry-content:not(h3),
+	 .entry-content:not(h4),
+	 .entry-content:not(h5,
+	 .entry-content:not(h6)) {
+		 @include text-big;
+ }
 
 	.entry-title.solo {
 		padding-bottom: 0;
@@ -1071,7 +1085,6 @@ body {
 --------------------------------------------------------------*/
 
 .widget-section {
-	margin-bottom: 1.5rem;
 
 	.menu {
 	  list-style: none;
@@ -1127,8 +1140,20 @@ body {
   }
 }
 
-.page-numbers.current {
-	@include title-bold;
+.page-numbers {
+	margin: 0 .5rem;
+
+	&.current {
+		@include title-bold;
+	}
+}
+
+.fa-arrow-left {
+    margin-right: 1rem;
+}
+
+.fa-arrow-right {
+    margin-left: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -1138,20 +1163,22 @@ body {
 section.comments {
   margin: 2rem auto;
   padding: 2rem 0;
+	width: 75%;
 
 	h3 {
 		text-align: center;
+	}
+
+	.comment-form textarea {
+    width: 100%;
 	}
 }
 
 .comment-form {
 
-	* {
-  	width: 100%;
-	}
-
 	label {
 		text-align: left;
+		display: block;
 	}
 
 	input[type="submit"] {
@@ -1202,11 +1229,33 @@ section.comments {
 --------------------------------------------------------------*/
 
 .widget-section {
+	margin-bottom: 1.5rem;
+	max-width: 10.3rem;
+
   :nth-child(2) {
-    font-size: 14px;
+    @include text-small;
   }
 
 	p {
 		margin: 0;
+	}
+}
+
+.widgets-wrapper .widget-section:last-child > :not(.btn-cta) {
+	padding-left: .72rem;
+}
+
+.swiper-slide {
+	background: none;
+}
+
+.wp-block-jetpack-slideshow_slide {
+	.swiper-button-prev,
+	.swiper-button-next {
+		background-color: $color-text;
+
+		&:hover {
+			background-color: $color-highlight;
+		}
 	}
 }

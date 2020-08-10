@@ -6,4 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	var siteHeader = document.querySelector(".site-header");
 	var siteContent = document.querySelector(".site-content");
 	siteContent.style.marginTop = `${siteHeader.clientHeight}px`;
+	// Certification, labels... : open all external links in a new tab
+	var labelsLinks = document.querySelectorAll(".site-labels a");
+	labelsLinks.forEach(link => link.target = "_blank");
+
 });

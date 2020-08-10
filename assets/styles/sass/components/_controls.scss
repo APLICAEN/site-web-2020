@@ -2,7 +2,7 @@
   background-color: $color-highlight;
 }
 
-.btn-secondary-cta {
+button.btn-secondary-cta {
   background-color: transparent;
   border: 2px solid $color-highlight;
   color: $color-highlight;
@@ -11,7 +11,7 @@
     box-shadow: none;
     background-color: $color-highlight;
     color: $color-lightwhite;
-    transition: all .3s ease-in-out;
+    transition: $transition-base;
   }
 }
 
