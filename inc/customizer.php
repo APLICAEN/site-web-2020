@@ -1,4 +1,51 @@
 <?php
+function aplicaen_customize_register_header($wp_customize) {
+  $wp_customize -> add_section(
+    'section_header',
+    array(
+      'title'         => 'En-tête',
+      'description'   => 'Options de personnalisation des pages utilisant le modèle "Expertise".'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'header_cta_text',
+    array(
+    'default'     => 'Notre plaquette',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'header_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_header',
+      'setting'        => 'header_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'header_cta_file',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    new WP_Customize_Media_Control(
+      $wp_customize,
+      'header_cta_file',
+      array (
+        'label' => 'Fichier (plaquette)',
+        'section' => 'section_header',
+        'setting' => 'header_cta_file'
+      )
+    )
+  );
+}
 
 function aplicaen_customize_register_blog($wp_customize) {
   $wp_customize -> add_section(
@@ -1521,6 +1568,7 @@ function aplicaen_customize_register_expertise_page($wp_customize) {
   );
 }
 
+add_action('customize_register', 'aplicaen_customize_register_header');
 add_action('customize_register', 'aplicaen_customize_register_blog');
 add_action('customize_register', 'aplicaen_customize_register_footer');
 add_action('customize_register', 'aplicaen_customize_register_homepage');

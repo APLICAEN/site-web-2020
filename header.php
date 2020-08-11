@@ -53,7 +53,10 @@
     </ul>
   </nav>
   <section class="call-to-action">
-    <button type="button" class="btn-secondary-cta">Notre plaquette</button>
+    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("header_cta_file")); ?>"
+    target="_blank" lass="cta-link">
+    <button type="button" class="btn-secondary-cta"><?php echo get_theme_mod("header_cta_text"); ?></button>
+    </a>
   </section>
 </header>
 <main class="site-content">
