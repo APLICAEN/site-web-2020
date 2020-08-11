@@ -549,6 +549,7 @@ textarea:focus {
 	color: $color-highlight;
 	border-color: $color-highlight;
   background-color: $color-lightwhite;
+	border: $border-prefix;
 }
 
 select {
@@ -882,15 +883,6 @@ body {
     }
   }
 
-  .prestations-wrapper, .processus-wrapper,
-  .testimonials-wrapper, .recommended-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-items: center;
-    column-gap: 24px;
-		row-gap: 106px;
-  }
-
   &.hero-section {
       background-color: $color-highlight;
 
@@ -898,6 +890,15 @@ body {
         color: $color-lightwhite;
       }
   }
+}
+
+.prestations-wrapper, .processus-wrapper,
+.testimonials-wrapper, .recommended-wrapper {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	justify-items: center;
+	column-gap: 24px;
+	row-gap: 106px;
 }
 
 .credentials-wrapper {
@@ -1258,4 +1259,77 @@ section.comments {
 			background-color: $color-highlight;
 		}
 	}
+}
+
+.sd-button {
+  background: $color-text !important; /*override Jetpack social icons colors*/
+}
+
+.strong-content {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	justify-items: center;
+	column-gap: 24px;
+	row-gap: 106px;
+
+	.testimonial {
+		border-radius: 16px;
+		padding: 20px;
+		padding-bottom: 3rem;
+		box-sizing: content-box;
+		border: $border-prefix $color-secondary;
+
+		.testimonial-inner {
+			padding: 0 ;
+
+			.testimonial-name {
+				@include title-bold;
+				margin-bottom: 0;
+			}
+
+			.testimonial-content {
+				display: grid;
+				font-size: 1rem ;
+				text-align: left ;
+				margin: 0 ;
+				font-style: normal ;
+
+				&::before, &::after {
+					mask: none ;
+					background: transparent ;
+				}
+
+				p {
+					grid-row: 1;
+				}
+
+				.testimonial-image {
+					margin-top: 55px;
+					display: flex;
+					justify-content: center;
+
+					img {
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						margin-bottom: 13px;
+					}
+				}
+			}
+
+			.testimonial-field {
+			   text-align: center;
+			}
+		}
+	}
+}
+
+.strong-rating-wrapper {
+  display: grid;
+  justify-items: center;
+  margin: 3rem auto;
+}
+
+.testimonials_rating {
+	margin-bottom: .5rem;
 }

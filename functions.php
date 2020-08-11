@@ -104,6 +104,7 @@ function aplicaen_init_widgets() {
 
 add_action('widgets_init', 'aplicaen_init_widgets');
 
-require get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/required-plugins.php';
 
  ?>

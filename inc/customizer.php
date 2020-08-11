@@ -1173,6 +1173,63 @@ function aplicaen_customize_register_homepage($wp_customize) {
   );
 
   $wp_customize->add_setting(
+    'testimonials_rating_show',
+    array(
+    'default'     => false,
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_rating_show',
+    array(
+      'label'          => 'Afficher la note moyenne',
+      'description'    => 'Moyenne des notes des avis clients.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_rating_show',
+      'type'           => 'checkbox'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_rating',
+    array(
+    'default'     => '[testimonial_average_rating]<h5 class="testimonials_rating">{average} / 5</h5> {stars} <p>de satisfaction client moyen (sur {count} avis)</p>[/testimonial_average_rating]',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_rating',
+    array(
+      'label'          => 'Note moyenne',
+      'description'    => 'Code court à utiliser pour afficher la moyenne des notes des avis clients.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_rating',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_content',
+    array(
+    'default'     => '[testimonial_view id="1"]',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_content',
+    array(
+      'label'          => 'Sélection de 3 témoignages',
+      'description'    => 'Code court à utiliser pour afficher les témoignages (3).',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_content',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
     'testimonials_cta_text',
     array(
     'default'     => 'Tous nos témoignages',

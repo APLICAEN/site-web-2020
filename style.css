@@ -474,7 +474,8 @@ input[type="color"]:focus,
 textarea:focus {
   color: #3A42BC;
   border-color: #3A42BC;
-  background-color: #F9F9FF; }
+  background-color: #F9F9FF;
+  border: 1px solid; }
 
 select {
   height: 3rem;
@@ -884,17 +885,18 @@ body {
     align-items: start; }
     .site-section .expertises-wrapper .card-expertise:nth-child(2) {
       margin: 0 24px; }
-  .site-section .prestations-wrapper, .site-section .processus-wrapper,
-  .site-section .testimonials-wrapper, .site-section .recommended-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    column-gap: 24px;
-    row-gap: 106px; }
   .site-section.hero-section {
     background-color: #3A42BC; }
     .site-section.hero-section * {
       color: #F9F9FF; }
+
+.prestations-wrapper, .processus-wrapper,
+.testimonials-wrapper, .recommended-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: 24px;
+  row-gap: 106px; }
 
 .credentials-wrapper {
   text-align: center; }
@@ -980,17 +982,24 @@ body {
       height: 96px; }
 
 .card-testimonial {
-  grid-row-gap: 55px; }
+  grid-row-gap: 55px;
+  grid-template-rows: 1fr .5fr; }
+  .card-testimonial .card-content * {
+    font-size: 18px;
+    line-height: 1.5rem;
+    margin: 0;
+    width: 100%; }
   .card-testimonial .card-footer {
-    text-align: center; }
-    .card-testimonial .card-footer .author-picture {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin-bottom: 13px; }
-    .card-testimonial .card-footer .author-name {
-      font-weight: 700;
-      margin-bottom: 0; }
+    text-align: center;
+    align-self: initial; }
+  .card-testimonial img, .card-testimonial .author-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 13px; }
+  .card-testimonial .author-name, .card-testimonial .testimonial-name {
+    font-weight: 700;
+    margin-bottom: 0; }
 
 .card-recommended .recommended-thumbnail-wrapper {
   height: 180px;
@@ -1242,3 +1251,55 @@ section.comments {
   .wp-block-jetpack-slideshow_slide .swiper-button-prev:hover,
   .wp-block-jetpack-slideshow_slide .swiper-button-next:hover {
     background-color: #3A42BC; }
+
+.sd-button {
+  background: #1D215E !important;
+  /*override Jetpack social icons colors*/ }
+
+.strong-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: 24px;
+  row-gap: 106px; }
+  .strong-content .testimonial {
+    border-radius: 16px;
+    padding: 20px;
+    padding-bottom: 3rem;
+    box-sizing: content-box;
+    border: 1px solid #C8C8EB; }
+    .strong-content .testimonial .testimonial-inner {
+      padding: 0; }
+      .strong-content .testimonial .testimonial-inner .testimonial-name {
+        font-weight: 700;
+        margin-bottom: 0; }
+      .strong-content .testimonial .testimonial-inner .testimonial-content {
+        display: grid;
+        font-size: 1rem;
+        text-align: left;
+        margin: 0;
+        font-style: normal; }
+        .strong-content .testimonial .testimonial-inner .testimonial-content::before, .strong-content .testimonial .testimonial-inner .testimonial-content::after {
+          mask: none;
+          background: transparent; }
+        .strong-content .testimonial .testimonial-inner .testimonial-content p {
+          grid-row: 1; }
+        .strong-content .testimonial .testimonial-inner .testimonial-content .testimonial-image {
+          margin-top: 55px;
+          display: flex;
+          justify-content: center; }
+          .strong-content .testimonial .testimonial-inner .testimonial-content .testimonial-image img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 13px; }
+      .strong-content .testimonial .testimonial-inner .testimonial-field {
+        text-align: center; }
+
+.strong-rating-wrapper {
+  display: grid;
+  justify-items: center;
+  margin: 3rem auto; }
+
+.testimonials_rating {
+  margin-bottom: .5rem; }

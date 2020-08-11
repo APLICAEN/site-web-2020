@@ -91,21 +91,29 @@
 
 .card-testimonial {
   grid-row-gap: 55px;
+  grid-template-rows: 1fr .5fr;
+
+  .card-content * {
+    @include text-base;
+    margin: 0;
+    width: 100%;
+  }
 
   .card-footer {
     text-align: center;
+    align-self: initial;
+  }
 
-    .author-picture {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin-bottom: 13px;
-    }
+  img, .author-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 13px;
+  }
 
-    .author-name {
-      @include title-bold;
-      margin-bottom: 0;
-    }
+  .author-name, .testimonial-name {
+    @include title-bold;
+    margin-bottom: 0;
   }
 }
 

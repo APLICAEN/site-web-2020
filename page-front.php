@@ -246,24 +246,12 @@ get_header(); ?>
   <div class="section-header">
     <h2 class="section-title"><?php echo get_theme_mod("testimonials_title"); ?></h2>
   </div>
-  <div class="section-content">
-    <section class="testimonials-wrapper">
-      <div class="card card-testimonial">
-        <div class="card-content">
-          <p class="expertise-desc">
-            Réactifs et dynamiques, les membres d’APLICAEN sauront répondre
-            avec professionnalisme et pertinence à vos besoins en mettant
-            à profit la formation dont ils bénéficient à l’ENSICAEN.
-          </p>
-        </div>
-        <div class="card-footer">
-          <img src="./assets/media/images/info.jpg" alt="Partenaires" class="author-picture">
-          <p class="author-name">J.F. Hamet</p>
-          <p class="author-position">Directeur ENSICAEN</p>
-        </div>
-      </div>
-    </section>
-  </div>
+    <?php
+    echo do_shortcode(get_theme_mod("testimonials_content")); 
+    if(get_theme_mod("testimonials_rating_show")) {
+    	echo do_shortcode(get_theme_mod("testimonials_rating"));
+    }
+    ?>
   <div class="section-footer">
     <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("testimonials_cta_url")); ?>"
     class="cta-link">
