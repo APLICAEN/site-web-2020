@@ -1455,8 +1455,75 @@ function aplicaen_customize_register_homepage($wp_customize) {
 
 }
 
+function aplicaen_customize_register_expertise_page($wp_customize) {
+  $wp_customize -> add_section(
+    'section_expertise_page',
+    array(
+      'title'         => 'Modèle de page Expertise',
+      'description'   => 'Options de personnalisation des pages utilisant le modèle "Expertise".'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'expertise_page_related_title',
+    array(
+    'default'     => 'Nos prestations associées',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'expertise_page_related_title',
+    array(
+      'label'          => 'Titre',
+      'description'    => 'Titre de la section "prestations associées".',
+      'section'        => 'section_expertise_page',
+      'setting'        => 'expertise_page_related_title',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'expertise_page_related_cta_text',
+    array(
+    'default'     => 'Voir plus de prestations',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'expertise_page_related_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_expertise_page',
+      'setting'        => 'expertise_page_related_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'expertise_page_related_cta_url',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'expertise_page_related_cta_url',
+    array(
+      'label'          => 'Lien',
+      'description'    => 'Page vers laquelle doit rediriger le bouton.',
+      'section'        => 'section_expertise_page',
+      'setting'        => 'expertise_page_related_cta_url',
+      'type'           => 'dropdown-pages'
+    )
+  );
+}
+
 add_action('customize_register', 'aplicaen_customize_register_blog');
 add_action('customize_register', 'aplicaen_customize_register_footer');
 add_action('customize_register', 'aplicaen_customize_register_homepage');
+add_action('customize_register', 'aplicaen_customize_register_expertise_page');
 
 ?>
