@@ -2,7 +2,8 @@
   background-color: $color-highlight;
 }
 
-button.btn-secondary-cta, .btn-secondary-cta a, a.wp-block-button__link{
+button.btn-secondary-cta, .btn-secondary-cta a,
+a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
   background-color: transparent;
   border: 2px solid $color-highlight;
   color: $color-highlight;
@@ -13,6 +14,12 @@ button.btn-secondary-cta, .btn-secondary-cta a, a.wp-block-button__link{
     background-color: $color-highlight;
     color: $color-lightwhite;
     transition: $transition-base;
+  }
+}
+
+.wp-block-button__link {
+  &:active, &:focus, &:visited {
+    color: $color-highlight;
   }
 }
 

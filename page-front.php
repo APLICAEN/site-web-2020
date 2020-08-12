@@ -36,7 +36,7 @@ get_header(); ?>
       <li><?php echo get_theme_mod("portrait_expertise_2"); ?></li>
       <li><?php echo get_theme_mod("portrait_expertise_3"); ?></li>
     </ul>
-    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("portrait_cta_url")); ?>"
+    <a href="<?php get_permalink(get_theme_mod("portrait_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="cta-primary">
         <?php echo get_theme_mod("portrait_cta_text"); ?>
@@ -51,7 +51,7 @@ get_header(); ?>
   <div class="section-content">
     <section class="expertises-wrapper">
       <div class="card card-expertise">
-        <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertises_url_1")); ?>"
+        <a href="<?php get_permalink(get_theme_mod("expertises_url_1")); ?>"
           class="card-link">
           <div class="card-header">
             <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_1"); ?></h4>
@@ -63,7 +63,7 @@ get_header(); ?>
           </div>
           <div class="card-footer">
             <div class="expertise-cta">
-              <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertises_url_1")); ?>">
+              <a href="<?php get_permalink(get_theme_mod("expertises_url_1")); ?>">
                 <?php echo get_theme_mod("expertises_cta"); ?>
               </a>
             </div>
@@ -71,7 +71,7 @@ get_header(); ?>
         </a>
       </div>
       <div class="card card-expertise">
-        <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertises_url_2")); ?>"
+        <a href="<?php get_permalink(get_theme_mod("expertises_url_2")); ?>"
           class="card-link">
           <div class="card-header">
             <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_2"); ?></h4>
@@ -83,7 +83,7 @@ get_header(); ?>
           </div>
           <div class="card-footer">
             <div class="expertise-cta">
-              <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertises_url_2")); ?>">
+              <a href="<?php get_permalink(get_theme_mod("expertises_url_2")); ?>">
                 <?php echo get_theme_mod("expertises_cta"); ?>
               </a>
             </div>
@@ -91,7 +91,7 @@ get_header(); ?>
         </a>
       </div>
       <div class="card card-expertise">
-        <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertises_url_3")); ?>"
+        <a href="<?php get_permalink(get_theme_mod("expertises_url_3")); ?>"
           class="card-link">
           <div class="card-header">
             <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_3"); ?></h4>
@@ -103,7 +103,7 @@ get_header(); ?>
           </div>
           <div class="card-footer">
             <div class="expertise-cta">
-              <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertises_url_3")); ?>">
+              <a href="<?php get_permalink(get_theme_mod("expertises_url_3")); ?>">
                 <?php echo get_theme_mod("expertises_cta"); ?>
               </a>
             </div>
@@ -120,75 +120,51 @@ get_header(); ?>
   <div class="section-content">
     <section class="prestations-wrapper">
       <section class="prestations-column">
+        <?php
+        for($i = 1; $i <= 3; $i++) {
+          $slug = 'prestations_url_' . $i;
+          $page_id = get_theme_mod($slug);
+         ?>
         <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_1")); ?>"
+          <a href="<?php echo get_permalink($page_id); ?>"
             class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_1"); ?></h6>
+            <h6 class="prestation-name"><?php echo get_the_title($page_id); ?></h6>
           </a>
         </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_2")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_2"); ?></h6>
-          </a>
-        </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_3")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_3"); ?></h6>
-          </a>
-        </div>
+      <?php } ?>
       </section>
       <section class="prestations-column">
+        <?php
+        for($i = 4; $i <= 7; $i++) {
+          $slug = 'prestations_url_' . $i;
+          $page_id = get_theme_mod($slug);
+         ?>
         <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_4")); ?>"
+          <a href="<?php echo get_permalink($page_id); ?>"
             class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_4"); ?></h6>
+            <h6 class="prestation-name"><?php echo get_the_title($page_id); ?></h6>
           </a>
         </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_5")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_5"); ?></h6>
-          </a>
-        </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_6")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_6"); ?></h6>
-          </a>
-        </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_7")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_7"); ?></h6>
-          </a>
-        </div>
+      <?php } ?>
       </section>
       <section class="prestations-column">
+        <?php
+        for($i = 8; $i <= 10; $i++) {
+          $slug = 'prestations_url_' . $i;
+          $page_id = get_theme_mod($slug);
+         ?>
         <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_8")); ?>"
+          <a href="<?php echo get_permalink($page_id); ?>"
             class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_8"); ?></h6>
+            <h6 class="prestation-name"><?php echo get_the_title($page_id); ?></h6>
           </a>
         </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_9")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_9"); ?></h6>
-          </a>
-        </div>
-        <div class="card card-prestation">
-          <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_url_10")); ?>"
-            class="card-link">
-            <h6 class="prestation-name"><?php echo get_theme_mod("prestations_name_10"); ?></h6>
-          </a>
-        </div>
+      <?php } ?>
       </section>
     </section>
   </div>
   <div class="section-footer">
-    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("prestations_cta_url")); ?>"
+    <a href="<?php get_permalink(get_theme_mod("prestations_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="prestations-cta">
         <?php echo get_theme_mod("prestations_cta_text"); ?>
@@ -232,14 +208,16 @@ get_header(); ?>
       <img src="<?php echo get_theme_mod("credentials_image"); ?>">
     </section>
   </div>
+  <?php if(!get_theme_mod("credentials_cta_hide")) : ?>
   <div class="section-footer">
-    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("credentials_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("credentials_cta_url")); ?>"
     class="cta-link">
     <button type="button" class="prestations-cta">
       <?php echo get_theme_mod("credentials_cta_text"); ?>
     </button>
     </a>
   </div>
+<?php endif; ?>
 </section>
 <?php if(!get_theme_mod('testimonials_hidden')) : ?>
 <section class="site-section">
@@ -247,17 +225,19 @@ get_header(); ?>
     <h2 class="section-title"><?php echo get_theme_mod("testimonials_title"); ?></h2>
   </div>
     <?php
-    echo do_shortcode(get_theme_mod("testimonials_content")); 
+    echo do_shortcode(get_theme_mod("testimonials_content"));
     if(get_theme_mod("testimonials_rating_show")) {
     	echo do_shortcode(get_theme_mod("testimonials_rating"));
     }
     ?>
+    <?php if(!get_theme_mod("testimonials_cta_hide")) : ?>
   <div class="section-footer">
-    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("testimonials_cta_url")); ?>"
+    <a href="<?php get_permalink(get_theme_mod("testimonials_cta_url")); ?>"
     class="cta-link">
     <button type="button" class="prestations-cta"><?php echo get_theme_mod("testimonials_cta_text"); ?></button>
     </a>
   </div>
+  <?php endif; ?>
 </section>
 <?php endif; ?>
 <?php if(!get_theme_mod('team_hidden')) : ?>
@@ -271,7 +251,7 @@ get_header(); ?>
     </div>
   </div>
   <div class="section-footer">
-    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("testimonials_cta_url")); ?>"
+    <a href="<?php get_permalink(get_theme_mod("team_cta_url")); ?>"
     class="cta-link">
     <button type="button" class="section-cta"><?php echo get_theme_mod("team_cta_text"); ?></button>
     </a>
@@ -315,7 +295,7 @@ get_header(); ?>
     </section>
   </div>
   <div class="section-footer">
-    <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("news_cta_url")); ?>"
+    <a href="<?php get_permalink(get_theme_mod("news_cta_url")); ?>"
     class="cta-link">
     <button type="button"><?php echo get_theme_mod("news_cta_text"); ?></button>
     </a>

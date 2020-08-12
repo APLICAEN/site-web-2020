@@ -2,10 +2,10 @@
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <?php if ( is_single() ) : ?>
-<meta name="description" content="<?php echo wp_strip_all_tags( get_the_excerpt(), true ); ?>" />
-<?php else : ?>
-  <meta name="description" content="<?php bloginfo('description'); ?>">
+  <?php if ( is_home() ) : ?>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+  <?php else : ?>
+    <meta name="description" content="<?php echo wp_strip_all_tags( get_the_excerpt(), true ); ?>" />
 <?php endif; ?>
   <meta name="author" content="<?php bloginfo('author'); ?>">
   <title><?php the_title(); ?></title>

@@ -426,23 +426,6 @@ function aplicaen_customize_register_footer($wp_customize) {
 }
 
 function aplicaen_customize_register_prestation($wp_customize, $id) {
-  $wp_customize->add_setting(
-    'prestations_name_' . $id,
-    array(
-    'type'        => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'prestations_name_' . $id,
-    array(
-      'label'          => 'Prestation ' . $id . ' - Nom',
-      'description'    => 'Nom de la prestation.',
-      'section'        => 'section_prestations',
-      'setting'        => 'prestations_name_' . $id,
-      'type'           => 'text'
-    )
-  );
 
   $wp_customize->add_setting(
     'prestations_url_' . $id,
@@ -454,7 +437,7 @@ function aplicaen_customize_register_prestation($wp_customize, $id) {
   $wp_customize->add_control(
     'prestations_url_' . $id,
     array(
-      'label'          => 'Prestation ' . $id . ' - Lien',
+      'label'          => 'Prestation ' . $id,
       'description'    => 'Page vers laquelle rediriger.',
       'section'        => 'section_prestations',
       'setting'        => 'prestations_url_' . $id,
@@ -1209,6 +1192,25 @@ function aplicaen_customize_register_homepage($wp_customize) {
     )
   );
 
+  $wp_customize->add_setting(
+    'credentials_cta_hide',
+    array(
+    'default'     => false,
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'credentials_cta_hide',
+    array(
+      'label'          => 'Masquer le bouton',
+      'description'    => 'Cocher cette case pour masquer le bouton de la section.',
+      'section'        => 'section_credentials',
+      'setting'        => 'credentials_cta_hide',
+      'type'           => 'checkbox'
+    )
+  );
+
   $wp_customize -> add_section(
     'section_testimonials',
     array(
@@ -1347,6 +1349,25 @@ function aplicaen_customize_register_homepage($wp_customize) {
       'section'        => 'section_testimonials',
       'setting'        => 'testimonials_cta_url',
       'type'           => 'dropdown-pages'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'testimonials_cta_hide',
+    array(
+    'default'     => false,
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'testimonials_cta_hide',
+    array(
+      'label'          => 'Masquer le bouton',
+      'description'    => 'Cocher cette case pour masquer le bouton de la section.',
+      'section'        => 'section_testimonials',
+      'setting'        => 'testimonials_cta_hide',
+      'type'           => 'checkbox'
     )
   );
 

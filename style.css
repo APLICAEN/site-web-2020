@@ -524,16 +524,21 @@ input[type="submit"],
 .btn-primary-cta {
   background-color: #3A42BC; }
 
-button.btn-secondary-cta, .btn-secondary-cta a, a.wp-block-button__link {
+button.btn-secondary-cta, .btn-secondary-cta a,
+a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
   background-color: transparent;
   border: 2px solid #3A42BC;
   color: #3A42BC;
   font-weight: 600; }
-  button.btn-secondary-cta:hover, .btn-secondary-cta a:hover, a.wp-block-button__link:hover {
+  button.btn-secondary-cta:hover, .btn-secondary-cta a:hover,
+  a.wp-block-button__link:hover, .wp-block-file a.wp-block-file__button:hover {
     box-shadow: none;
     background-color: #3A42BC;
     color: #F9F9FF;
     transition: all 0.6s ease-in-out; }
+
+.wp-block-button__link:active, .wp-block-button__link:focus, .wp-block-button__link:visited {
+  color: #3A42BC; }
 
 .btn-tertiary-cta {
   background-color: #F9F9FF;
@@ -967,7 +972,8 @@ body {
   .card-prestation .prestation-name {
     font-weight: 400;
     font-size: 20px;
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
   .card-prestation * {
     transition: all .3s ease-in-out; }
   .card-prestation:hover {
@@ -1105,7 +1111,7 @@ body {
     align-items: center; }
   .entry .entry-meta *, .entry .entry-title {
     text-align: center; }
-  .entry .wp-block-group__inner-container > *,
+  .entry .wp-block-group__inner-container > :not(div),
   .entry .entry-content * {
     margin-left: auto;
     margin-right: auto;
