@@ -1,16 +1,15 @@
 # Aplicaen 2020
 
-Thème WordPress pour la refonte 2020 du site web de l'association [Aplicaen](http://www.aplicaen.fr/) pour le lancement de la nouvelle offre de services.
-
-=== Theme Name ===
-Contributors: (Should only contain WordPress.org usernames.)
+=== Aplicaen ===
+Contributors: genevievemasioni
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.4.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Short description. No more than 150 chars.
+Thème WordPress pour la refonte 2020 du site web de l'association Aplicaen
+pour le lancement de la nouvelle offre de services.
 
 == Description ==
 Theme desc.
@@ -41,4 +40,4 @@ An answer to that question.
 
 == Resources ==
 * magnify.jpg © 2014 Jane Doe, CC0
-* supermenu.js © 2013-2015 James Today, MIT 
+* supermenu.js © 2013-2015 James Today, MIT

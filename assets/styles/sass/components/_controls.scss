@@ -2,10 +2,11 @@
   background-color: $color-highlight;
 }
 
-button.btn-secondary-cta {
+button.btn-secondary-cta, .btn-secondary-cta a, a.wp-block-button__link{
   background-color: transparent;
   border: 2px solid $color-highlight;
   color: $color-highlight;
+  @include title-semi-bold;
 
   &:hover {
     box-shadow: none;

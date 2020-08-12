@@ -4,12 +4,12 @@ function aplicaen_customize_register_header($wp_customize) {
     'section_header',
     array(
       'title'         => 'En-tête',
-      'description'   => 'Options de personnalisation des pages utilisant le modèle "Expertise".'
+      'description'   => 'Options de personnalisation de l\' en-tête.'
     )
   );
 
   $wp_customize->add_setting(
-    'header_cta_text',
+    'header_home_cta_text',
     array(
     'default'     => 'Notre plaquette',
     'type'        => 'theme_mod'
@@ -17,9 +17,9 @@ function aplicaen_customize_register_header($wp_customize) {
   );
 
   $wp_customize->add_control(
-    'header_cta_text',
+    'header_home_cta_text',
     array(
-      'label'          => 'Texte du bouton',
+      'label'          => 'Texte du bouton de l\'accueil',
       'description'    => 'Texte à afficher.',
       'section'        => 'section_header',
       'setting'        => 'header_cta_text',
@@ -28,7 +28,7 @@ function aplicaen_customize_register_header($wp_customize) {
   );
 
   $wp_customize->add_setting(
-    'header_cta_file',
+    'header_home_cta_file',
     array(
     'type'        => 'theme_mod'
     )
@@ -37,12 +37,49 @@ function aplicaen_customize_register_header($wp_customize) {
   $wp_customize->add_control(
     new WP_Customize_Media_Control(
       $wp_customize,
-      'header_cta_file',
+      'header_home_cta_file',
       array (
         'label' => 'Fichier (plaquette)',
         'section' => 'section_header',
-        'setting' => 'header_cta_file'
+        'setting' => 'header_home_cta_file'
       )
+    )
+  );
+
+  $wp_customize->add_setting(
+    'header_cta_text',
+    array(
+    'default'     => 'Demander un devis',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'header_cta_text',
+    array(
+      'label'          => 'Texte du bouton sur toutes les autres pages',
+      'description'    => 'Texte à afficher pour les pages autres que l\'accueil.',
+      'section'        => 'section_header',
+      'setting'        => 'header_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'header_cta_url',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'header_cta_url',
+    array(
+      'label'          => 'Lien du bouton sur toutes les autres pages',
+      'description'    => 'Lien de redirection pour les pages autres que l\'accueil.',
+      'section'        => 'section_header',
+      'setting'        => 'header_cta_url',
+      'type'           => 'dropdown-pages'
     )
   );
 }
