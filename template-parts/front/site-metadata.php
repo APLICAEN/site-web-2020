@@ -33,7 +33,7 @@
       <li><?php echo get_theme_mod("portrait_expertise_2"); ?></li>
       <li><?php echo get_theme_mod("portrait_expertise_3"); ?></li>
     </ul>
-    <a href="<?php get_permalink(get_theme_mod("portrait_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("portrait_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="cta-primary">
         <?php echo get_theme_mod("portrait_cta_text"); ?>

@@ -8,7 +8,6 @@
 <section class="site-section">
   <div class="section-content">
     <section class="recommended-wrapper">
-
       <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
       <article class="card card-recommended">
         <div class="recommended-header">

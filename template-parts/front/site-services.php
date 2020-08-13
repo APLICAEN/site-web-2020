@@ -49,7 +49,7 @@
     </section>
   </div>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("prestations_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("prestations_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="prestations-cta">
         <?php echo get_theme_mod("prestations_cta_text"); ?>

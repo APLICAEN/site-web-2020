@@ -31,7 +31,7 @@
     </section>
   </div>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("news_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("news_cta_url")); ?>"
     class="cta-link">
     <button type="button"><?php echo get_theme_mod("news_cta_text"); ?></button>
     </a>

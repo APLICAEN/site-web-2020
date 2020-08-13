@@ -1626,10 +1626,77 @@ function aplicaen_customize_register_expertise_page($wp_customize) {
   );
 }
 
+function aplicaen_customize_register_service_page($wp_customize) {
+  $wp_customize -> add_section(
+    'section_service_page',
+    array(
+      'title'         => 'Modèle de page Prestation',
+      'description'   => 'Options de personnalisation des pages utilisant le modèle "Prestation".'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'service_page_related_title',
+    array(
+    'default'     => 'Autres prestations',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'service_page_related_title',
+    array(
+      'label'          => 'Titre',
+      'description'    => 'Titre de la section "prestations associées".',
+      'section'        => 'section_service_page',
+      'setting'        => 'service_page_related_title',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'service_page_related_cta_text',
+    array(
+    'default'     => 'Voir toutes nos prestations',
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'service_page_related_cta_text',
+    array(
+      'label'          => 'Texte du bouton',
+      'description'    => 'Texte à afficher.',
+      'section'        => 'section_service_page',
+      'setting'        => 'service_page_related_cta_text',
+      'type'           => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'service_page_related_cta_url',
+    array(
+    'type'        => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'service_page_related_cta_url',
+    array(
+      'label'          => 'Lien',
+      'description'    => 'Page vers laquelle doit rediriger le bouton.',
+      'section'        => 'section_service_page',
+      'setting'        => 'service_page_related_cta_url',
+      'type'           => 'dropdown-pages'
+    )
+  );
+}
+
 add_action('customize_register', 'aplicaen_customize_register_header');
 add_action('customize_register', 'aplicaen_customize_register_blog');
 add_action('customize_register', 'aplicaen_customize_register_footer');
 add_action('customize_register', 'aplicaen_customize_register_homepage');
 add_action('customize_register', 'aplicaen_customize_register_expertise_page');
+add_action('customize_register', 'aplicaen_customize_register_service_page');
 
 ?>

@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("team_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("team_cta_url")); ?>"
     class="cta-link">
     <button type="button" class="section-cta"><?php echo get_theme_mod("team_cta_text"); ?></button>
     </a>

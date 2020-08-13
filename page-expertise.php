@@ -15,7 +15,7 @@ get_header(); ?>
 </article>
 <?php endwhile; endif; ?>
 <?php
-$children = get_pages(array('parent' => $post->ID));
+$children = get_pages(array('parent' => $post->ID, 'sort_column' => 'rand'));
 $nb_children = count($children);
 if($nb_children > 0) { ?>
   <section class="site-section">
@@ -26,8 +26,7 @@ if($nb_children > 0) { ?>
       <section class="recommended-wrapper">
         <?php
         for($i = 0; $i < $nb_children && $i < 3; $i++) {
-          $child_index = rand(0, $nb_children - 1);
-          $child = $children[$child_index];
+          $child = $children[$i];
           ?>
           <article class="card card-recommended">
             <div class="recommended-header">

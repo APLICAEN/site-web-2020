@@ -8,7 +8,7 @@
       for($i = 1; $i <= 3; $i++) {
        ?>
       <div class="card card-expertise">
-        <a href="<?php get_permalink(get_theme_mod("expertises_url_" . $i)); ?>"
+        <a href="<?php echo get_permalink(get_theme_mod("expertises_url_" . $i)); ?>"
           class="card-link">
           <div class="card-header">
             <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_" . $i); ?></h4>
@@ -20,7 +20,7 @@
           </div>
           <div class="card-footer">
             <div class="expertise-cta">
-              <a href="<?php get_permalink(get_theme_mod("expertises_url_" . $i)); ?>">
+              <a href="<?php echo get_permalink(get_theme_mod("expertises_url_" . $i)); ?>">
                 <?php echo get_theme_mod("expertises_cta"); ?>
               </a>
             </div>
