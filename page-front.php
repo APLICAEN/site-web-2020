@@ -36,7 +36,7 @@ get_header(); ?>
       <li><?php echo get_theme_mod("portrait_expertise_2"); ?></li>
       <li><?php echo get_theme_mod("portrait_expertise_3"); ?></li>
     </ul>
-    <a href="<?php get_permalink(get_theme_mod("portrait_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("portrait_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="cta-primary">
         <?php echo get_theme_mod("portrait_cta_text"); ?>
@@ -50,66 +50,30 @@ get_header(); ?>
   </div>
   <div class="section-content">
     <section class="expertises-wrapper">
+      <?php
+      for($i = 1; $i <= 3; $i++) {
+       ?>
       <div class="card card-expertise">
-        <a href="<?php get_permalink(get_theme_mod("expertises_url_1")); ?>"
+        <a href="<?php echo get_permalink(get_theme_mod("expertises_url_" . $i)); ?>"
           class="card-link">
           <div class="card-header">
-            <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_1"); ?></h4>
+            <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_" . $i); ?></h4>
           </div>
           <div class="card-content">
             <p class="expertise-desc">
-              <?php echo get_theme_mod("expertises_desc_1"); ?>
+              <?php echo get_theme_mod("expertises_desc_" . $i); ?>
             </p>
           </div>
           <div class="card-footer">
             <div class="expertise-cta">
-              <a href="<?php get_permalink(get_theme_mod("expertises_url_1")); ?>">
+              <a href="<?php echo get_permalink(get_theme_mod("expertises_url_" . $i)); ?>">
                 <?php echo get_theme_mod("expertises_cta"); ?>
               </a>
             </div>
           </div>
         </a>
       </div>
-      <div class="card card-expertise">
-        <a href="<?php get_permalink(get_theme_mod("expertises_url_2")); ?>"
-          class="card-link">
-          <div class="card-header">
-            <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_2"); ?></h4>
-          </div>
-          <div class="card-content">
-            <p class="expertise-desc">
-              <?php echo get_theme_mod("expertises_desc_2"); ?>
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="expertise-cta">
-              <a href="<?php get_permalink(get_theme_mod("expertises_url_2")); ?>">
-                <?php echo get_theme_mod("expertises_cta"); ?>
-              </a>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card card-expertise">
-        <a href="<?php get_permalink(get_theme_mod("expertises_url_3")); ?>"
-          class="card-link">
-          <div class="card-header">
-            <h4 class="expertise-name"><?php echo get_theme_mod("expertises_name_3"); ?></h4>
-          </div>
-          <div class="card-content">
-            <p class="expertise-desc">
-              <?php echo get_theme_mod("expertises_desc_3"); ?>
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="expertise-cta">
-              <a href="<?php get_permalink(get_theme_mod("expertises_url_3")); ?>">
-                <?php echo get_theme_mod("expertises_cta"); ?>
-              </a>
-            </div>
-          </div>
-        </a>
-      </div>
+    <?php } ?>
     </section>
   </div>
 </section>
@@ -164,7 +128,7 @@ get_header(); ?>
     </section>
   </div>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("prestations_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("prestations_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="prestations-cta">
         <?php echo get_theme_mod("prestations_cta_text"); ?>
@@ -232,7 +196,7 @@ get_header(); ?>
     ?>
     <?php if(!get_theme_mod("testimonials_cta_hide")) : ?>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("testimonials_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("testimonials_cta_url")); ?>"
     class="cta-link">
     <button type="button" class="prestations-cta"><?php echo get_theme_mod("testimonials_cta_text"); ?></button>
     </a>
@@ -251,14 +215,14 @@ get_header(); ?>
     </div>
   </div>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("team_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("team_cta_url")); ?>"
     class="cta-link">
     <button type="button" class="section-cta"><?php echo get_theme_mod("team_cta_text"); ?></button>
     </a>
   </div>
 </section>
 <?php endif; ?>
-<?php if(!get_theme_mod('news_hidden')) : ?>
+<?php if(have_posts() && !get_theme_mod('news_hidden')) : ?>
 <section class="site-section">
   <div class="section-header">
     <h2 class="section-title"><?php echo get_theme_mod("news_title"); ?></h2>
@@ -266,7 +230,6 @@ get_header(); ?>
   <div class="section-content">
     <section class="recommended-wrapper">
       <?php
-      if(have_posts()) {
         $blog_posts = get_posts(array('numberposts' => 3));
         foreach ($blog_posts as $post_key => $post) {
       ?>
@@ -288,14 +251,12 @@ get_header(); ?>
           <?php the_excerpt(); ?>
         </div>
       </article>
-    <?php
-      unset($post);
-    }}
+    <?php } unset($post);
     ?>
     </section>
   </div>
   <div class="section-footer">
-    <a href="<?php get_permalink(get_theme_mod("news_cta_url")); ?>"
+    <a href="<?php echo get_permalink(get_theme_mod("news_cta_url")); ?>"
     class="cta-link">
     <button type="button"><?php echo get_theme_mod("news_cta_text"); ?></button>
     </a>

@@ -851,7 +851,7 @@ function aplicaen_customize_register_homepage($wp_customize) {
       'description'    => 'Description de l\'expertise.',
       'section'        => 'section_expertises',
       'setting'        => 'expertises_desc_1',
-      'type'           => 'text'
+      'type'           => 'textarea'
     )
   );
 
@@ -908,7 +908,7 @@ function aplicaen_customize_register_homepage($wp_customize) {
       'description'    => 'Description de l\'expertise.',
       'section'        => 'section_expertises',
       'setting'        => 'expertises_desc_2',
-      'type'           => 'text'
+      'type'           => 'textarea'
     )
   );
 
@@ -965,7 +965,7 @@ function aplicaen_customize_register_homepage($wp_customize) {
       'description'    => 'Description de l\'expertise.',
       'section'        => 'section_expertises',
       'setting'        => 'expertises_desc_3',
-      'type'           => 'text'
+      'type'           => 'textarea'
     )
   );
 

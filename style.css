@@ -303,7 +303,7 @@ textarea {
   background-color: #C8C8EB;
   color: #1D215E;
   border: none;
-  padding: 0.062rem 1.11rem;
+  padding: 0.94rem 2.05rem;
   border-radius: 2.77rem;
   margin: 0.062rem auto; }
 
@@ -453,7 +453,7 @@ textarea {
   background: #C8C8EB;
   border: none;
   display: inline-block;
-  padding: 0.062rem 1.11rem; }
+  padding: 0.94rem 2.05rem; }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -487,8 +487,8 @@ input[type="submit"],
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none;
-  min-width: 13rem;
-  height: 3.22rem;
+  padding: 0.94rem 2.05rem;
+  white-space: nowrap;
   background-color: #3A42BC;
   color: #F9F9FF;
   font-weight: 600;
@@ -564,7 +564,7 @@ a.wp-block-file__button:visited {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0.062rem 1.11rem;
+    padding: 0.94rem 2.05rem;
     line-height: 2.77rem;
     color: #3A42BC; }
 
@@ -1321,6 +1321,14 @@ section.comments {
   .wp-block-jetpack-slideshow_slide .swiper-button-prev:hover,
   .wp-block-jetpack-slideshow_slide .swiper-button-next:hover {
     background-color: #3A42BC; }
+
+.sharedaddy.sd-sharing-enabled :not(li) {
+  width: 100%;
+  margin: 0; }
+
+.sharedaddy.sd-sharing-enabled li {
+  margin: 0 .27rem .27rem 0;
+  width: auto; }
 
 .sd-button {
   background: #1D215E !important;
