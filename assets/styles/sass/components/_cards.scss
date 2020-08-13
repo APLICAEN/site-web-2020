@@ -1,8 +1,8 @@
 .card {
   display: grid;
   border: none;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: .88rem;
+  padding: 1.11rem;
 
   .card-link {
     color: $color-text;
@@ -27,7 +27,7 @@
 }
 
 .card-expertise {
-  min-height: 360px;
+  min-height: 20rem;
   background-color: $color-highlight;
   flex: 1 1 33%;
   display: grid;
@@ -50,13 +50,13 @@
 
 .card-prestation {
   border: $border-prefix $color-secondary;
-  border-radius: 20px;
-  padding: 28px 49px;
-  margin: 44px;
+  border-radius: 1.11rem;
+  padding: 1.55rem 2.72rem;
+  margin: 2.44rem;
 
   .prestation-name {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.11rem;
     margin: 0;
     text-align: center;
   }
@@ -76,22 +76,22 @@
 }
 
 .card-processus {
-  font-size: 16px;
+  font-size: .88rem;
   display: block;
 
   .card-header {
     text-align: center;
 
     .card-icon {
-      width: 96px;
-      height: 96px;
+      width: 5.33rem;
+      height: 5.33rem;
     }
   }
 }
 
 
 .card-testimonial {
-  grid-row-gap: 55px;
+  grid-row-gap: 3.05rem;
   grid-template-rows: 1fr .5fr;
 
   .card-content * {
@@ -106,10 +106,10 @@
   }
 
   img, .author-picture {
-    width: 60px;
-    height: 60px;
+    width: 3.33rem;
+    height: 3.33rem;
     border-radius: 50%;
-    margin-bottom: 13px;
+    margin-bottom: .72rem;
   }
 
   .author-name, .testimonial-name {
@@ -120,7 +120,7 @@
 
 .card-recommended {
   .recommended-thumbnail-wrapper {
-    height: 180px;
+    height: 10rem;
     width: 100%;
     background-position: center;
     background-size: contain;

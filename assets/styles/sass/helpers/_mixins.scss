@@ -87,10 +87,10 @@
 
 @mixin text-big {
   font-size: $font-size-big;
-  line-height: 37.4px;
+  line-height: 2.07rem;
 }
 
 @mixin text-small {
   font-size: $font-size-small;
-  line-height: 16px;
+  line-height: .88rem;
 }

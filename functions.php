@@ -9,6 +9,7 @@ function aplicaen_setup() {
 
   add_theme_support('custom-logo');
   add_theme_support('post-thumbnails');
+  add_post_type_support('page', array('excerpt'));
 }
 
 add_action('after_setup_theme', 'aplicaen_setup');

@@ -109,7 +109,7 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: 1px $color-secondary dotted;
+	border-bottom: .05rem $color-secondary dotted;
 	text-decoration: none;
 }
 
@@ -223,7 +223,7 @@ button:-moz-focusring,
 
 fieldset {
 	border: $border-base;
-	margin: 0 2px;
+	margin: 0 .11rem;
 	padding: 0.35em 0.625em 0.75em;
 }
 
@@ -262,7 +262,7 @@ textarea {
 
 [type="search"] {
 	-webkit-appearance: textfield;
-	outline-offset: -2px;
+	outline-offset:  -.11rem;
 }
 
 [type="search"]::-webkit-search-cancel-button,
@@ -304,20 +304,20 @@ template {
 /* Text meant only for screen readers. */
 
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
+	clip: rect( .05rem, .05rem, .05rem, .05rem);
+	height: .05rem;
 	overflow: hidden;
 	position: absolute !important;
-	width: 1px;
+	width: .05rem;
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	-webkit-border-radius: .16rem;
+	border-radius: .16rem;
+	-webkit-box-shadow: 0 0 .11rem .11rem rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 .11rem .11rem rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -325,11 +325,11 @@ template {
 	font-size: 0.875rem;
 	font-weight: 900;
 	height: auto;
-	left: 5px;
+	left: .27rem;
 	line-height: normal;
-	padding: 15px 23px $font-size-small;
+	padding: .83rem 2.875rem $font-size-small;
 	text-decoration: none;
-	top: 5px;
+	top: .27rem;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
@@ -375,7 +375,6 @@ h5,
 h6 {
   @include title;
 	clear: both;
-  overflow-wrap: break-word;
 }
 
 h1:first-child,
@@ -426,9 +425,9 @@ i {
 blockquote {
 	color: $color-highlight;
   @include title-bold;
-	border-radius: 16px;
+	border-radius: .88rem;
 	border: $border-base;
-	padding: 20px;
+	padding: 1.11rem;
 	quotes: "" "";
 
 	&::before, &::after {
@@ -564,8 +563,8 @@ input[type="submit"],
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none;
-  min-width: 234px;
-  height: 58px;
+  min-width: 13rem;
+  height: 3.22rem;
   background-color: $color-highlight;
   color: $color-lightwhite;
   @include title-semi-bold;
@@ -709,7 +708,7 @@ a {
 }
 
 main a:hover {
-	border-bottom: 2px solid $color-highlight;
+	border-bottom: .11rem solid $color-highlight;
 }
 
 main a.cta-link:hover {
@@ -767,9 +766,9 @@ body {
   }
 
   img {
-    width: 42.81px;
+    width: 2.378rem;
   	height: auto;
-    margin-right: 63px;
+    margin-right: 3.5rem;
   }
 
   .site-branding {
@@ -809,18 +808,18 @@ body {
 		margin: 0 auto;
 
 		.statistic-desc {
-			font-size: 16px;
+			font-size: .88rem;
 			opacity: .5;
 		}
 
 		.statistic-number {
-			margin-bottom: 25px;
+			margin-bottom: 1.38rem;
 		}
 	}
 }
 
 .site-metadata {
-	padding-bottom: 87px;
+	padding-bottom: 4.83rem;
 
   & > * {
     @include flex;
@@ -834,10 +833,10 @@ body {
     }
 
     .metadata-general {
-      margin-right: 39px;
+      margin-right: 2.16rem;
 
 			.metadata-name {
-				margin-bottom: 25px;
+				margin-bottom: 1.38rem;
 			}
     }
   }
@@ -854,8 +853,8 @@ body {
       & li {
         display: inline-block;
         @include title-h6;
-        width: 196px;
-        margin-right: 13px;
+        width: 10.88rem;
+        margin-right: .72rem;
       }
     }
 
@@ -866,8 +865,8 @@ body {
 }
 
 .site-section {
-  padding-top: 61px;
-  padding-bottom: 87px;
+  padding-top: 3.38rem;
+  padding-bottom: 4.83rem;
 
 	&.hidden {
 		display: none;
@@ -883,7 +882,7 @@ body {
     align-items: start;
 
     .card-expertise:nth-child(2) {
-      margin: 0 24px;
+      margin: 0 1.33rem;
     }
   }
 
@@ -901,8 +900,8 @@ body {
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	justify-items: center;
-	column-gap: 24px;
-	row-gap: 106px;
+	column-gap: 1.33rem;
+	row-gap: 5.88rem;
 }
 
 .credentials-wrapper {
@@ -929,7 +928,7 @@ body {
 
 .section-footer {
   @include flex-vh-center;
-  margin-top: 44px;
+  margin-top: 2.44rem;
 }
 
 @import "components/cards";
@@ -941,14 +940,14 @@ body {
 
 .site-footer {
   background-color: $color-alternate;
-  padding-bottom: 62px;
+  padding-bottom: 3.44rem;
 
   & > :first-child {
     background-color: $color-lightwhite;
   }
 
   & > :last-child {
-    padding-bottom: 44px;
+    padding-bottom: 2.44rem;
   }
 
   & > :not(:first-child) {
@@ -972,10 +971,10 @@ body {
 }
 
 .widgets-wrapper {
-  padding: 44px $padding-large;
+  padding: 2.44rem $padding-large;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 65px;
+  column-gap: 3.61rem;
 }
 
 .site-credits {
@@ -984,9 +983,9 @@ body {
 		grid-column: 1;
 
 		img {
-	    width: 42.81px;
+	    width: 2.378rem;
 	    height: auto;
-	    margin-right: 39px;
+	    margin-right: 2.16rem;
   	}
 	}
 
@@ -1014,11 +1013,11 @@ body {
 --------------------------------------------------------------*/
 
 .entry {
-	padding-top: 42px;
+	padding-top: 2.33rem;
 
 	& > * {
-    padding-top: 61px;
-    padding-bottom: 87px;
+    padding-top: 3.38rem;
+    padding-bottom: 4.83rem;
 	}
 
 	& > :nth-child(2n+3) {
@@ -1048,7 +1047,7 @@ body {
 	 .entry-content:not(h4),
 	 .entry-content:not(h5),
 	 .entry-content:not(h6) {
-		 line-height: 37.4px;
+		 line-height: 2.07rem;
 		 @include text-big;
  }
 
@@ -1058,8 +1057,8 @@ body {
 	}
 
 	.entry-content {
-    padding-top: 61px;
-    padding-bottom: 87px;
+    padding-top: 3.38rem;
+    padding-bottom: 4.83rem;
 	}
 
 	.site-section.hero-section {
@@ -1083,7 +1082,7 @@ body {
 
 .pagination {
 	justify-content: center;
-	padding-top: 61px;
+	padding-top: 3.38rem;
 }
 
 /*--------------------------------------------------------------
@@ -1097,7 +1096,7 @@ body {
 	  padding: 0;
 
 		li {
-			margin-bottom: 11px;
+			margin-bottom: .61rem;
 
 			a {
 				color: $color-text;
@@ -1134,15 +1133,15 @@ body {
 }
 
 .social-links {
-  margin-bottom: 62px;
+  margin-bottom: 3.44rem;
 
   & > * {
-    margin-right: 18px;
+    margin-right: 1rem;
   }
 
   img {
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -1333,12 +1332,12 @@ section.comments {
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	justify-items: center;
-	column-gap: 24px;
-	row-gap: 106px;
+	column-gap: 1.33rem;
+	row-gap: 5.88rem;
 
 	.testimonial {
-		border-radius: 16px;
-		padding: 20px;
+		border-radius: .88rem;
+		padding: 1.11rem;
 		padding-bottom: 3rem;
 		box-sizing: content-box;
 		border: $border-prefix $color-secondary;
@@ -1368,15 +1367,15 @@ section.comments {
 				}
 
 				.testimonial-image {
-					margin-top: 55px;
+					margin-top: 3.05rem;
 					display: flex;
 					justify-content: center;
 
 					img {
-						width: 60px;
-						height: 60px;
+						width: 3.33rem;
+						height: 3.33rem;
 						border-radius: 50%;
-						margin-bottom: 13px;
+						margin-bottom: .72rem;
 					}
 				}
 			}

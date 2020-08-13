@@ -5,7 +5,7 @@
 button.btn-secondary-cta, .btn-secondary-cta a,
 a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
   background-color: transparent;
-  border: 2px solid $color-highlight;
+  border: .11rem solid $color-highlight;
   color: $color-highlight;
   @include title-semi-bold;
 
@@ -17,7 +17,8 @@ a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
   }
 }
 
-.wp-block-button__link {
+a.wp-block-button__link,
+a.wp-block-file__button {
   &:active, &:focus, &:visited {
     color: $color-highlight;
   }
@@ -30,7 +31,7 @@ a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
 
 .select-wrapper  {
   position: relative;
-  min-width: 234px;
+  min-width: 13rem;
 
   select {
     /* Appearance: none will hide the default arrow */
@@ -49,14 +50,14 @@ a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
       top: 0;
       right: 0;
       padding: $padding-btn;
-      line-height: 50px;
+      line-height: 2.77rem;
       color: $color-highlight;
   }
 }
 
 .os-scrollbar-vertical {
   & > .os-scrollbar-track {
-    width: 10px;
+    width: .55rem;
     & .os-scrollbar-handle {
       background: $color-text !important;
     }
@@ -72,7 +73,7 @@ Styles based on 2020 Toggles by Aaron Iker @ https://codepen.io/aaroniker/pen/ZE
   input[type='radio'] {
     --active: #3A42BC;
     --active-inner: #F1F1F1;
-    --focus: 2px rgba(39, 94, 254, .3);
+    --focus: .11rem rgba(39, 94, 254, .3);
     --border: #C8C8EB;
     --border-hover: #3A42BC;
     --background: #F1F1F1;
@@ -80,14 +81,14 @@ Styles based on 2020 Toggles by Aaron Iker @ https://codepen.io/aaroniker/pen/ZE
     --disabled-inner: #E1E6F9;
     -webkit-appearance: none;
     -moz-appearance: none;
-    height: 21px;
+    height: 1.16rem;
     outline: none;
     display: inline-block;
     vertical-align: top;
     position: relative;
     margin: 0;
     cursor: pointer;
-    border: 1px solid var(--bc, var(--border));
+    border: .055rem solid var(--bc, var(--border));
     background: var(--b, var(--background));
     transition: background .3s, border-color .3s, box-shadow .2s;
     &:after {
@@ -128,7 +129,7 @@ Styles based on 2020 Toggles by Aaron Iker @ https://codepen.io/aaroniker/pen/ZE
       box-shadow: 0 0 0 var(--focus);
     }
     &:not(.switch) {
-      width: 21px;
+      width: 1.16rem;
       &:after {
         opacity: var(--o, 0);
       }
@@ -137,25 +138,25 @@ Styles based on 2020 Toggles by Aaron Iker @ https://codepen.io/aaroniker/pen/ZE
       }
     }
     & + label {
-      font-size: 14px;
-      line-height: 21px;
+      font-size: .77rem;
+      line-height: 1.16rem;
       display: inline-block;
       vertical-align: top;
       cursor: pointer;
-      margin-left: 4px;
+      margin-left: .22rem;
     }
   }
   input[type='checkbox'] {
     &:not(.switch) {
-      border-radius: 7px;
+      border-radius: .38rem;
       &:after {
-        width: 5px;
-        height: 9px;
-        border: 2px solid var(--active-inner);
+        width: .27rem;
+        height: .5rem;
+        border: .11rem solid var(--active-inner);
         border-top: 0;
         border-left: 0;
-        left: 7px;
-        top: 4px;
+        left: .38rem;
+        top: .22rem;
         transform: rotate(var(--r, 20deg));
       }
       &:checked {
@@ -163,20 +164,20 @@ Styles based on 2020 Toggles by Aaron Iker @ https://codepen.io/aaroniker/pen/ZE
       }
     }
     &.switch {
-      width: 38px;
-      border-radius: 11px;
+      width: 2.11rem;
+      border-radius: .61rem;
       &:after {
-        left: 2px;
-        top: 2px;
+        left: .11rem;
+        top: .11rem;
         border-radius: 50%;
-        width: 15px;
-        height: 15px;
+        width: .83rem;
+        height: .83rem;
         background: var(--ab, var(--border));
         transform: translateX(var(--x, 0));
       }
       &:checked {
         --ab: var(--active-inner);
-        --x: 17px;
+        --x: .94rem;
       }
       &:disabled {
         &:not(:checked) {
@@ -190,8 +191,8 @@ Styles based on 2020 Toggles by Aaron Iker @ https://codepen.io/aaroniker/pen/ZE
   input[type='radio'] {
     border-radius: 50%;
     &:after {
-      width: 19px;
-      height: 19px;
+      width: 1.05rem;
+      height: 1.05rem;
       border-radius: 50%;
       background: var(--active-inner);
       opacity: 0;

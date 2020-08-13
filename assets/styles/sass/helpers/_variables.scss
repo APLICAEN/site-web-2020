@@ -1,23 +1,23 @@
 // Fonts
 $font-size-base: 18px;
-$font-size-big: 21px;
-$font-size-small: 14px;
+$font-size-big: 1.16rem;
+$font-size-small: .77rem;
 $font-family-base: 'Work Sans', sans-serif;
 $font-family-title: 'Work Sans', sans-serif;
 $font-family-formatted: "Courier", Courier, monospace;
 $font-weight-base: 400;
-$title-size-h1: 58px;
-$title-size-h2: 58px;
-$title-size-h3: 38.37px;
-$title-size-h4: 24px;
-$title-size-h5: 24px;
-$title-size-h6: 18px;
-$line-height-h1: 68px;
-$line-height-h2: 68px;
-$line-height-h3: 45px;
-$line-height-h4: 170.3%;
-$line-height-h5: 140.3%;
-$line-height-h6: 21px;
+$title-size-h1: 3.22rem;
+$title-size-h2: 3.22rem;
+$title-size-h3: 2.13rem;
+$title-size-h4: 1.33rem;
+$title-size-h5: 1.33rem;
+$title-size-h6: 1rem;
+$line-height-h1: 3.77rem;
+$line-height-h2: 3.77rem;
+$line-height-h3: 2.5rem;
+$line-height-h4: 2.27rem;
+$line-height-h5: 1.87rem;
+$line-height-h6: 1.66rem;
 
 // Colors
 $color-lightwhite: #F9F9FF;
@@ -33,38 +33,38 @@ rgba(58,66,188, 96.29), rgba(58,66,188, 100));
 $color-highlight-background: rgba(58,66,188, .4);
 
 // Layout
-$padding-basic: 82px;
+$padding-basic: 4.55rem;
 $padding-large: 11.28%;
-$padding-btn: 10px 20px;
-$margin-small: 10px;
-$padding-header: 24px $padding-large;
+$padding-btn: .062rem 1.11rem;
+$margin-small: .062rem;
+$padding-header: 1.33rem $padding-large;
 
 // Aesthetic
-$box-shadow-base: 0 1px 1px rgba(29, 33, 94,0.12),
-              0 2px 2px rgba(29, 33, 94,0.12),
-              0 4px 4px rgba(29, 33, 94,0.12),
-              0 8px 8px rgba(29, 33, 94,0.12),
-              0 16px 16px rgba(29, 33, 94,0.12);
+$box-shadow-base: 0 .055rem .055rem rgba(29, 33, 94,0.12),
+              0 .11rem .11rem rgba(29, 33, 94,0.12),
+              0 .22rem .22rem rgba(29, 33, 94,0.12),
+              0 .44rem .44rem rgba(29, 33, 94,0.12),
+              0 .88rem .88rem rgba(29, 33, 94,0.12);
 
 $box-shadow-card:
-  0 2.8px 2.2px rgba(29, 33, 94, 0.034),
-  0 6.7px 5.3px rgba(29, 33, 940, 0.048),
-  0 12.5px 10px rgba(29, 33, 94, 0.06),
-  0 22.3px 17.9px rgba(29, 33, 94, 0.072),
-  0 41.8px 33.4px rgba(29, 33, 94, 0.086),
-  0 100px 80px rgba(29, 33, 94, 0.12);
+  0 2.8px .12rem rgba(29, 33, 94, 0.034),
+  0 .37rem .294rem rgba(29, 33, 940, 0.048),
+  0 .694rem .062rem rgba(29, 33, 94, 0.06),
+  0 1.24rem .994rem rgba(29, 33, 94, 0.072),
+  0 2.32rem 1.85rem rgba(29, 33, 94, 0.086),
+  0 5.55rem 4.44rem rgba(29, 33, 94, 0.12);
 
-$box-shadow-dreamy: 0 1px 2px rgba(29, 33, 94,0.07),
-                  0 2px 4px rgba(29, 33, 94,0.07),
-                  0 4px 8px rgba(29, 33, 94,0.07),
-                  0 8px 16px rgba(29, 33, 94,0.07),
-                  0 16px 32px rgba(29, 33, 94,0.07),
-                  0 32px 64px rgba(29, 33, 94,0.07);
+$box-shadow-dreamy: 0 .055rem .11rem rgba(29, 33, 94,0.07),
+                  0 .11rem .22rem rgba(29, 33, 94,0.07),
+                  0 .22rem .44rem rgba(29, 33, 94,0.07),
+                  0 .44rem .88rem rgba(29, 33, 94,0.07),
+                  0 .88rem 1.77rem rgba(29, 33, 94,0.07),
+                  0 1.77rem 3.55rem rgba(29, 33, 94,0.07);
 
-$radius-soft: 15px;
-$radius-hard: 50px;
+$radius-soft: .83rem;
+$radius-hard: 2.77rem;
 
-$border-prefix: 1px solid;
+$border-prefix: .055rem solid;
 $border-base: $border-prefix $color-highlight;
 $transition-base: all .6s ease-in-out;
 $transition-base-short: all .3s ease-in-out;
