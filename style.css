@@ -37,7 +37,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	 10.5 Posts
 11.0 Navigation
 12.0 Comments
-13.0 Widgets
+13.0 Gutenberg blocks
+14.0 Widgets
 
 -----------------------------------------------------------*/
 /*-----------------------------------------------------------
@@ -1314,7 +1315,13 @@ section.comments {
   text-align: center; }
 
 /*--------------------------------------------------------------
-13.0 Widgets
+13.0 Gutenberg blocks
+--------------------------------------------------------------*/
+.block-services-list .section-content {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+14.0 Widgets
 --------------------------------------------------------------*/
 .widget-section {
   margin-bottom: 1.5rem;
