@@ -49,7 +49,7 @@ if($nb_children > 0) { ?>
       </section>
     </div>
     <div class="section-footer">
-      <a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("expertise_page_related_cta_url")); ?>"
+      <a href="<?php echo get_permalink(get_theme_mod("expertise_page_related_cta_url")); ?>"
         class="cta-link">
         <button type="button"><?php echo get_theme_mod("expertise_page_related_cta_text"); ?></button>
       </a>

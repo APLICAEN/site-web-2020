@@ -947,7 +947,8 @@ body {
     align-self: end; }
 
 .card-expertise, .card-recommended,
-.card-processus, .card-testimonial {
+.card-processus, .card-testimonial,
+.card-team-member {
   box-sizing: content-box;
   border: 0.055rem solid #C8C8EB; }
 
@@ -1043,6 +1044,21 @@ body {
     transition: all .5s ease-in-out; }
   .card-recommended:hover .recommended-title {
     color: #3A42BC; }
+
+.card-team-member {
+  justify-items: center;
+  text-align: center; }
+  .card-team-member .member-name {
+    margin-bottom: .61rem; }
+  .card-team-member .member-picture {
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover; }
+  .card-team-member .card-footer a {
+    border: none; }
 
 /*--------------------------------------------------------------
 10.4 Footer
@@ -1381,3 +1397,9 @@ section.comments {
 
 .testimonials_rating {
   margin-bottom: .5rem; }
+
+.tlp-team .img-responsive {
+  margin: 0 auto; }
+
+.tlp-team .svg-inline--fa {
+  vertical-align: bottom; }
