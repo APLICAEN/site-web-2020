@@ -53,6 +53,11 @@ function aplicaen_register_required_plugins() {
 			'name'      => 'Strong Testimonials',
 			'slug'      => 'strong-testimonials',
 			'required'  => true
+		),
+		array(
+			'name'      => 'Block Lab',
+			'slug'      => 'block-lab',
+			'required'  => true
 		)
 	);
 
