@@ -7,7 +7,7 @@ Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Thème WordPress pour la refonte 2020 du site web de l'association Aplicaen
 pour le lancement de la nouvelle offre de services.
@@ -27,10 +27,32 @@ http://genevievemasioni.com
 
 = Quels fichiers installer sur WordPress ? =
 
-Exporter tous les fichiers sauf :
--
+Le projet est prêt à être compressé et installé sur WordPress !
+
+= Comment améliorer le thème / participer au développement ? =
+
+Dupliquer le repo Git sur une machine.
+Développer et tester sur une installation locale de WordPress (voir version minimale en tête de fichier).
+Ouvrir un ticket de demande de fusion sur le dépôt GitHub.
+
+TODO :
+- Rendre le thème "Ready to translate"
+- Inclusion propre des fichiers de style et JS avec wp_enqueue_script et wp_enqueue_style (header.php)
+
+= Technologies et environnement de développement ? =
+
+- HTML
+- CSS (Sass)
+- Javascript
+- PHP
+
+- Gulp (gulp-sass)
 
 == Changelog ==
+
+= 1.0.1 =
+* Clean folder to remove unused or unnecessary files and folders.
+* Fix license version number
 
 = 1.0 =
 * First version. Stable and ready to be used.
