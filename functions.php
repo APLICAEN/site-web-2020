@@ -107,5 +107,6 @@ add_action('widgets_init', 'aplicaen_init_widgets');
 
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/required-plugins.php';
+require_once get_template_directory() . '/inc/custom-blocks.php';
 
  ?>
