@@ -10,7 +10,7 @@
       <div class="card card-processus">
         <div class="card-header">
           <img src="<?php echo get_theme_mod('processus_image_' . $i); ?>" class="card-icon">
-          <h6 class="prestation-name"><?php echo get_theme_mod('processus_name_' . $i); ?></h6>
+          <h5 class="prestation-name"><?php echo get_theme_mod('processus_name_' . $i); ?></h5>
         </div>
         <div class="card-content">
           <p class="expertise-desc">

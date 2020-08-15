@@ -1,12 +1,14 @@
 <?php
-if(!empty(block_value( 'parent-page-url' ))) :
-$page_id = url_to_postid(block_value( 'parent-page-url' ));
+// Disable Lazyblock plugin block frontend wrapper
+add_filter( 'lazyblock/services-list/frontend_allow_wrapper', '__return_false' );
+if(!empty($attributes['parent-page-url'])) :
+$page_id = url_to_postid($attributes['parent-page-url']);
 $children = get_pages(array('parent' => $page_id));
 $nb_children = count($children);
 if($nb_children > 0) : ?>
   <section class="site-section block-services-list">
     <div class="section-header">
-      <h2 class="section-title"><?php echo block_value( 'section-title' ); ?></h2>
+      <h2 class="section-title"><?php echo $attributes['section-title']; ?></h2>
     </div>
     <div class="section-content">
       <section class="recommended-wrapper">

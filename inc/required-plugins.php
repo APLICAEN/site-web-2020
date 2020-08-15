@@ -55,8 +55,8 @@ function aplicaen_register_required_plugins() {
 			'required'  => true
 		),
 		array(
-			'name'      => 'Block Lab',
-			'slug'      => 'block-lab',
+			'name'      => 'Lazy Blocks',
+			'slug'      => 'lazy-blocks',
 			'required'  => true
 		)
 	);

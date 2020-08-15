@@ -1,7 +1,319 @@
-@media (min-width: 1166px) {
+// @media (min-width: 1166px) {
+//   .metadata-statistics {
+//     .statistic-wrapper {
+//       width: 10rem;
+//     }
+//   }
+// }
+
+  @media only screen and (max-width: 1023px) {
+  html, body {
+    font-size: 16px;
+  }
+
+  .site-header {
+    flex-wrap: nowrap;
+
+    .desktop-navigation {
+      display: none;
+    }
+
+    .mobile-navigation {
+      display: none;
+
+      .toggle {
+        cursor: pointer;
+      }
+
+      & > ul {
+        text-align: right;
+        .mobile-menu {
+          margin: 0;
+        }
+      }
+
+      .sub-navigation {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        // display: none;
+        background-color:  $color-highlight;
+        color: $color-lightwhite;
+        // padding: 2.33rem 1.77rem;
+        padding: $padding-header;
+        overflow-y: scroll;
+
+        .sub-navigation-hide {
+          text-align: right;
+          margin-bottom: 7.5rem;
+          cursor: pointer;
+        }
+
+        .menu {
+          display: block;
+          text-align: center;
+
+          .menu-item {
+            display: block;
+            margin: 0;
+            margin-bottom: 2rem;
+
+            a {
+              color: $color-lightwhite;
+              font-size: 1.72rem;
+
+              &:hover { color: $color-text; }
+            }
+          }
+
+          .menu-item-has-children {
+            a { @include title-bold; }
+            .sub-menu {
+              display: none;
+              transition: $transition-base;
+            }
+            :hover { .sub-menu { display: block; margin-top: 2rem; } }
+          }
+        }
+      }
+    }
+  }
+
+  .site-footer {
+    .widgets-wrapper {
+      // display: flex;
+      // flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fit, 10rem);
+      justify-content: space-between;
+    }
+
+    .section-collapsed-content-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .collapsed-cta {
+        justify-content: center;
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+
+  .site-section {
+    .expertises-wrapper {
+      flex-wrap: wrap;
+
+      .card-expertise, .card-expertise:nth-child(2) {
+        margin-bottom: 2.86rem;
+      }
+
+      .card-expertise:nth-child(2) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .card-expertise {
+        display: grid;
+        min-height: 17rem;
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  .prestations-wrapper, .processus-wrapper,
+  .testimonials-wrapper, .recommended-wrapper {
+    grid-template-columns: auto;
+  }
+
+  .prestations-wrapper {
+    row-gap: 0;
+  }
+
+  .card-expertise, .card-recommended,
+  .card-processus, .card-testimonial, .card-team-member {
+    width: 100%;
+  }
+
+  .prestations-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+
+    .prestations-column:nth-child(2) {
+      order: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1/3;
+      column-gap: 1.33rem;
+    }
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  .site-metadata {
+    .metadata-statistics {
+      display: none;
+    }
+  }
+
+  .site-section .section-title {
+    padding: 0;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .site-header {
+    .mobile-navigation {
+      display: initial;
+    }
+  }
+
+  .site-metadata {
+    .metadata-info {
+      .metadata-statistics {
+        display: none;
+      }
+    }
+
+    .metadata-cta {
+      .cta-expertises {
+        text-align: center;
+      }
+
+      .metadata-statistics {
+
+        &.mobile-statistics {
+          display: flex;
+          flex-wrap: nowrap;
+          width: 100%;
+        }
+
+        .statistic-wrapper {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+
+  .site-section {
+    .expertises-wrapper {
+      .card-expertise {
+        min-height: auto;
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .site-header {
+    .desktop-navigation {
+      display: initial;
+    }
+  }
+
+  .site-section .expertises-wrapper {
+    display: grid;
+  }
+
+  .prestations-wrapper, .processus-wrapper,
+  .testimonials-wrapper, .recommended-wrapper,
+  .site-section .expertises-wrapper {
+    grid-template-columns: repeat(auto-fit, 45%);
+    justify-content: space-between;
+  }
+
+  .site-footer {
+    .widgets-wrapper {
+      grid-template-columns: repeat(auto-fit, 15rem);
+    }
+
+    .section-collapsed-content-footer {
+      flex-wrap: nowrap;
+
+      .collapsed-cta {
+        width: auto;
+      }
+    }
+  }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+
+@media only screen and (min-width: 600px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+@media only screen and (max-width: 992px) {
+  .site-header {
+    justify-content: space-between;
+
+    .call-to-action {
+      display: none;
+    }
+  }
+
+  .site-metadata {
+    .cta-expertises {
+      width: 100%;
+    }
+
+    .cta-expertises-links {
+      margin-top: 2rem;
+
+      .call-to-action.mobile-cta {
+        display: initial;
+      }
+
+      .cta-link {
+        margin-right: 1rem;
+      }
+    }
+
+    .metadata-cta {
+      flex-wrap: wrap;
+      width: 100%;
+
+      .cta-expertises:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1023px) {
+  html, body {
+    font-size: 16px;
+  }
+
+  .site-header {
+    .call-to-action {
+      display: initial;
+    }
+  }
+}
+
+@media (min-width: 872px) and (max-width: 1200px) {
   .metadata-statistics {
     .statistic-wrapper {
       width: 10rem;
     }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1280px) {
+  html, body {
+    font-size: $font-size-base;
   }
 }

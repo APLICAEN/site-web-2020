@@ -17,11 +17,13 @@ a.wp-block-button__link, .wp-block-file a.wp-block-file__button {
   }
 }
 
+.wp-block-file, .wp-block-button {
 a.wp-block-button__link,
 a.wp-block-file__button {
   &:active, &:focus, &:visited {
     color: $color-highlight;
   }
+}
 }
 
 .btn-tertiary-cta {

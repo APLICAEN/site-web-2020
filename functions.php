@@ -3,7 +3,8 @@
 function aplicaen_setup() {
   register_nav_menus(
     array(
-      'primary' => 'Menu principal'
+      'primary' => 'Menu principal',
+      'mobile' => 'Menu mobile'
     )
   );
 
@@ -17,7 +18,6 @@ add_action('after_setup_theme', 'aplicaen_setup');
 /**
  * Change the excerpt length
  */
-
 function aplicaen_custom_excerpt_length( $length ) {
     return 20;
 }

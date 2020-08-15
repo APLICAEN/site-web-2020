@@ -15,6 +15,28 @@
     }
   }
 
+  .card-header {
+    .card-emoji {
+      font-size: 3.22rem;
+    }
+
+    .card-number {
+      background: $color-lightwhite;
+      border-radius: 50%;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: grid;
+      margin: 0 auto;
+
+      * {
+        color: $color-highlight;
+        align-self: center;
+        margin: 0;
+        @include title-bold;
+      }
+    }
+  }
+
   .card-footer {
     align-self: end;
   }
@@ -53,7 +75,7 @@
   border: $border-prefix $color-secondary;
   border-radius: 1.11rem;
   padding: 1.55rem 2.72rem;
-  margin: 2.44rem;
+  margin: 2.44rem 0;
 
   .prestation-name {
     font-weight: 400;
@@ -96,7 +118,7 @@
   grid-template-rows: 1fr .5fr;
 
   .card-content * {
-    @include text-base;
+    font-size: 1rem;
     margin: 0;
     width: 100%;
   }
@@ -182,4 +204,16 @@
     .card-footer a {
       border: none;
     }
+}
+
+.emoji-card-list {
+  .site-section {
+    padding: 0;
+  }
+}
+
+.card-list {
+  .section-content {
+    padding: 0;
+  }
 }

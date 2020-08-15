@@ -7,24 +7,16 @@
       </p>
     </section>
     <section class="metadata-statistics">
+      <?php
+      for($i = 1; $i <= 3; $i++) {
+       ?>
       <div class="statistic-wrapper">
-        <h3 class="statistic-number"><?php echo get_theme_mod("portrait_statistic_number_1"); ?></h3>
+        <h3 class="statistic-number"><?php echo get_theme_mod("portrait_statistic_number_" . $i); ?></h3>
         <p class="statistic-desc">
-          <?php echo get_theme_mod("portrait_statistic_desc_1"); ?>
+          <?php echo get_theme_mod("portrait_statistic_desc_" . $i); ?>
         </p>
       </div>
-      <div class="statistic-wrapper">
-        <h3 class="statistic-number"><?php echo get_theme_mod("portrait_statistic_number_2"); ?></h3>
-        <p class="statistic-desc">
-          <?php echo get_theme_mod("portrait_statistic_desc_2"); ?>
-        </p>
-      </div>
-      <div class="statistic-wrapper">
-        <h3 class="statistic-number"><?php echo get_theme_mod("portrait_statistic_number_3"); ?></h3>
-        <p class="statistic-desc">
-          <?php echo get_theme_mod("portrait_statistic_desc_3"); ?>
-        </p>
-      </div>
+    <?php } ?>
     </section>
   </section>
   <section class="metadata-cta">
@@ -33,11 +25,33 @@
       <li><?php echo get_theme_mod("portrait_expertise_2"); ?></li>
       <li><?php echo get_theme_mod("portrait_expertise_3"); ?></li>
     </ul>
+    <section class="metadata-statistics mobile-statistics">
+      <?php
+      for($i = 1; $i <= 3; $i++) {
+       ?>
+      <div class="statistic-wrapper">
+        <h3 class="statistic-number"><?php echo get_theme_mod("portrait_statistic_number_" . $i); ?></h3>
+        <p class="statistic-desc">
+          <?php echo get_theme_mod("portrait_statistic_desc_" . $i); ?>
+        </p>
+      </div>
+    <?php } ?>
+    </section>
+    <div class="cta-expertises-links">
     <a href="<?php echo get_permalink(get_theme_mod("portrait_cta_url")); ?>"
       class="cta-link">
       <button type="button" class="cta-primary">
         <?php echo get_theme_mod("portrait_cta_text"); ?>
       </button>
     </a>
+
+    <section class="call-to-action mobile-cta">
+      <a href="<?php echo wp_get_attachment_url(get_theme_mod("header_home_cta_file")); ?>"
+      target="_blank" class="cta-link">
+      <button type="button" class="btn-secondary-cta"><?php echo get_theme_mod("header_home_cta_text"); ?></button>
+      </a>
+    </section>
+  </div>
   </section>
+
 </section>

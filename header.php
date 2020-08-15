@@ -39,18 +39,22 @@
   </nav>
   <nav class="navigation navigation-top mobile-navigation">
     <ul>
-      <li class="mobile-menu"><i class="fa fa-bars fa-1x"></i>
-        <?php
-        wp_nav_menu(
-          array(
-            'theme_location'  => 'primary',
-            'menu_class'      => 'sub-navigation',
-            'container'       => false
-          )
-        );
-        ?>
+      <li class="mobile-menu toggle"><i class="fa fa-grip-lines fa-2x"></i>
       </li>
     </ul>
+    <nav class="sub-navigation">
+      <div class="sub-navigation-hide">
+        <i class="fa fa-minus fa-2x toggle"></i>
+      </div>
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location'  => 'mobile',
+          'container'       => false
+        )
+      );
+      ?>
+    </nav>
   </nav>
   <?php get_template_part( 'template-parts/header/cta', 'header' ); ?>
 </header>
