@@ -1,7 +1,7 @@
 <?php
 
 // Disable Lazyblock plugin block frontend wrapper
-add_filter( 'lazyblock/icon-card-list/frontend_allow_wrapper', '__return_false' );
+add_filter( 'lazyblock/simple-card-list/frontend_allow_wrapper', '__return_false' );
  ?>
 <section class="site-section card-list">
   <?php if(!empty($attributes['section-title'])) : ?>
@@ -12,10 +12,9 @@ add_filter( 'lazyblock/icon-card-list/frontend_allow_wrapper', '__return_false' 
   <div class="section-content">
     <section class="processus-wrapper">
       <?php foreach( $attributes['card-list'] as $card ): ?>
-      <div class="card card-processus">
+      <div class="card card-processus card-simple">
         <div class="card-header">
-          <img src="<?php echo $card["card-icon"]["url"]; ?>" class="card-icon">
-          <h5 class="prestation-name"><?php echo $card["card-name"]; ?></h5>
+          <h3 class="prestation-name"><?php echo $card["card-name"]; ?></h3>
         </div>
         <div class="card-content">
           <p class="expertise-desc">

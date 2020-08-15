@@ -1,15 +1,8 @@
-// @media (min-width: 1166px) {
-//   .metadata-statistics {
-//     .statistic-wrapper {
-//       width: 10rem;
-//     }
-//   }
-// }
 
-  @media only screen and (max-width: 1023px) {
-  html, body {
-    font-size: 16px;
-  }
+  @media only screen and (max-width: 1247px) {
+  // html, body {
+  //   font-size: $font-size-base;
+  // }
 
   .site-header {
     flex-wrap: nowrap;
@@ -19,7 +12,6 @@
     }
 
     .mobile-navigation {
-      display: none;
 
       .toggle {
         cursor: pointer;
@@ -150,11 +142,8 @@
   }
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  html, body {
-    font-size: 14px;
-  }
+/* Extra small devices (phones, 824px and down) */
+@media only screen and (max-width: 824px) {
 
   .site-metadata {
     .metadata-statistics {
@@ -167,8 +156,16 @@
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+/* Medium devices (landscape tablets, 992px and up) */
+@media only screen and (max-width: 992px) {
+  html, body {
+    font-size:38px;
+  }
+
+  .site-section .section-title {
+    padding: 0;
+  }
+
   .site-header {
     .mobile-navigation {
       display: initial;
@@ -191,7 +188,8 @@
 
         &.mobile-statistics {
           display: flex;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
+          justify-content: center;
           width: 100%;
         }
 
@@ -200,6 +198,24 @@
         }
       }
     }
+
+    .cta-expertises-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .cta-link {
+        margin: 0;
+      }
+
+      .call-to-action.mobile-cta {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .section-header {
+    padding: 0;
   }
 
   .site-section {
@@ -209,10 +225,73 @@
       }
     }
   }
+
+  .entry {
+    .wp-block-button__link, .wp-block-file__button {
+      font-size: 1rem;
+    }
+
+    .wp-block-group__inner-container > :not(div),
+    .entry-content * {
+      width: 100%;
+    }
+  }
+
+  .prestations-wrapper,
+  .prestations-wrapper .prestations-column:nth-child(2) {
+    display: block;
+  }
+
+  .site-footer {
+    .section-collapsed-content-footer {
+      justify-content: center;
+
+      h6 {
+        margin-top: 0;
+      }
+    }
+
+    .widgets-wrapper {
+      display: block;
+      text-align: center;
+
+      .widget-section {
+        max-width: inherit;
+        width: 100%;
+
+        :nth-child(2) {
+          font-size: inherit;
+          line-height: inherit;
+        }
+        &:last-child > :not(.btn-cta) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .site-credits {
+      display: block;
+      text-align: center;
+
+      * {
+        margin-bottom: 1rem;
+      }
+
+      .site-branding img {
+        margin: 0;
+      }
+    }
+  }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+/* Medium devices (landscape tablets, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1247px) {
   .site-header {
     .desktop-navigation {
       display: initial;
@@ -246,15 +325,15 @@
 }
 
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
+/* Small devices (portrait tablets and large phones, 824px and up) */
+// @media only screen and (min-width: 824px) {
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 824px) {
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-@media only screen and (max-width: 992px) {
+/* Large devices (laptops/desktops, 1216px and up) */
+// @media only screen and (min-width: 1216px) {
+@media only screen and (max-width: 1216px) {
   .site-header {
     justify-content: space-between;
 
@@ -291,11 +370,7 @@
   }
 }
 
-@media only screen and (min-width: 1023px) {
-  html, body {
-    font-size: 16px;
-  }
-
+@media only screen and (min-width: 1247px) {
   .site-header {
     .call-to-action {
       display: initial;
@@ -303,7 +378,7 @@
   }
 }
 
-@media (min-width: 872px) and (max-width: 1200px) {
+@media (min-width: 1096px) and (max-width: 1424px) {
   .metadata-statistics {
     .statistic-wrapper {
       width: 10rem;
@@ -311,8 +386,9 @@
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1280px) {
+/* Extra large devices (large laptops and desktops, 1424px and up) */
+// @media only screen and (min-width: 1508px) {
+@media only screen and (min-width: 1023px) {
   html, body {
     font-size: $font-size-base;
   }

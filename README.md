@@ -50,6 +50,10 @@ TODO :
 
 == Changelog ==
 
+= 1.1.0 =
+* New Gutenberg block : Cartes simples avec titre
+* Fix displaying issues on mobile devices
+
 = 1.0.2 =
 * Update license version number
 * Fix primary call to action behavior : don't open link in new tab for pages other than home page
