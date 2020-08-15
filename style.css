@@ -323,6 +323,14 @@ h6 {
   font-style: normal;
   clear: both; }
 
+.entry h1,
+.entry h2,
+.entry h3,
+.entry h4,
+.entry h5,
+.entry h6 {
+  text-align: center; }
+
 h1:first-child,
 h2:first-child,
 h3:first-child,

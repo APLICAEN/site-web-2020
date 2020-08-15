@@ -11,8 +11,7 @@
 	<button type="button" class="btn-secondary-cta"><?php echo get_theme_mod("header_home_cta_text"); ?></button>
 	</a>
 <?php else : ?>
-	<a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("header_cta_url")); ?>"
-	target="_blank">
+	<a href="<?php bloginfo("url"); echo '/' . get_page_uri(get_theme_mod("header_cta_url")); ?>">
 	<button type="button"><?php echo get_theme_mod("header_cta_text"); ?></button>
 	</a>
 <?php endif; ?>

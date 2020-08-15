@@ -6,7 +6,7 @@ Contributors: genevievemasioni
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6
-License: GPLv2 or later
+License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Thème WordPress pour la refonte 2020 du site web de l'association Aplicaen
@@ -49,6 +49,11 @@ TODO :
 - Gulp (gulp-sass)
 
 == Changelog ==
+
+= 1.0.2 =
+* Update license version number
+* Fix primary call to action behavior : don't open link in new tab for pages other than home page
+* Center all titles by default
 
 = 1.0.1 =
 * Clean folder to remove unused or unnecessary files and folders.
