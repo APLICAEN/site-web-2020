@@ -464,7 +464,8 @@ textarea {
   background: #C8C8EB;
   border: none;
   display: inline-block;
-  padding: 0.94rem 2.05rem; }
+  padding: 0.94rem 2.05rem;
+  max-width: 100%; }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -830,6 +831,8 @@ body {
     color: #1D215E; }
     .site-header a:hover {
       color: #3A42BC; }
+  .site-header .current-menu-item a {
+    color: #3A42BC; }
   .site-header img {
     width: 2.378rem;
     height: auto;
@@ -1020,8 +1023,8 @@ body {
   .card-processus .card-header {
     text-align: center; }
     .card-processus .card-header .card-icon {
-      width: 5.33rem;
-      height: 5.33rem; }
+      height: 4.33rem;
+      width: auto; }
 
 .card-testimonial {
   grid-row-gap: 3.05rem;
@@ -1458,7 +1461,9 @@ section.comments {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 1247px) {
   .site-header {
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
     .site-header .desktop-navigation {
       display: none; }
     .site-header .mobile-navigation .toggle {
@@ -1498,7 +1503,7 @@ section.comments {
         .site-header .mobile-navigation .sub-navigation .menu .menu-item-has-children .sub-menu {
           display: none;
           transition: all 0.6s ease-in-out; }
-        .site-header .mobile-navigation .sub-navigation .menu .menu-item-has-children :hover .sub-menu {
+        .site-header .mobile-navigation .sub-navigation .menu .menu-item-has-children:hover .sub-menu {
           display: block;
           margin-top: 2rem; }
   .site-footer .widgets-wrapper {
@@ -1538,7 +1543,13 @@ section.comments {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-column: 1/3;
-      column-gap: 1.33rem; } }
+      column-gap: 1.33rem; }
+  .entry {
+    padding-top: 0; }
+    .entry .wp-block-columns {
+      flex-wrap: wrap; }
+      .entry .wp-block-columns .wp-block-column {
+        flex: 1 1 auto; } }
 
 /* Extra small devices (phones, 824px and down) */
 @media only screen and (max-width: 824px) {

@@ -541,6 +541,7 @@ textarea {
   border: none;
 	display: inline-block;
 	padding: $padding-btn;
+	max-width: 100%;
 }
 
 input[type="text"]:focus,
@@ -778,6 +779,10 @@ body {
       color: $color-highlight;
     }
   }
+
+	.current-menu-item a {
+		color: $color-highlight;
+	}
 
   img {
     width: 2.378rem;

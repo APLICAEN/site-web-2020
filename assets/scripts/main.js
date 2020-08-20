@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	var mobileMenuShow = document.querySelector(".mobile-menu");
 	var mobileMenuHide = document.querySelector(".sub-navigation-hide");
 	var mobileMenu = document.querySelector(".sub-navigation");
+	var mobileMenuHasChildren = document.querySelector(".sub-navigation .menu-item-has-children");
+	var mobileMenuSubMenu = document.querySelector(".sub-navigation .sub-menu");
 
 	function showMobileMenu() {
 		console.log("displaying menu")
@@ -23,7 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		mobileMenu.style.display = "none";
 	}
 
+	var visibleSubMenu = false;
+	function handleSubMenu() {
+		visibleSubMenu = !visibleSubMenu;
+		if(visibleSubMenu) mobileMenuSubMenu.style.display = "inherit";
+		else mobileMenuSubMenu.style.display = "none";
+	}
+
 	mobileMenuShow.addEventListener("click", showMobileMenu);
 	mobileMenuHide.addEventListener("click", hideMobileMenu);
+	mobileMenuHasChildren.addEventListener("click", handleSubMenu);
 
 });

@@ -50,6 +50,12 @@ TODO :
 
 == Changelog ==
 
+= 1.2.0 =
+* Fixed bug : sub-menus not displaying on mobile devices
+* Fix displaying issues for icon-card-list Gutenberg block
+* Menu : highlight current menu item
+
+
 = 1.1.0 =
 * New Gutenberg block : Cartes simples avec titre
 * Fix displaying issues on mobile devices
